@@ -25,5 +25,11 @@ namespace QuanLiQuanAn
             FInfo fi = new FInfo();
             fi.ShowDialog();
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            fAdmin fAdmin = new fAdmin();
+            fAdmin.ShowDialog();
+        }
     }
 }
