@@ -32,7 +32,7 @@ namespace QuanLiQuanAn
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dtgvTotal = new System.Windows.Forms.DataGridView();
             this.panel9 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -62,15 +62,6 @@ namespace QuanLiQuanAn
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -78,7 +69,18 @@ namespace QuanLiQuanAn
             this.panel17 = new System.Windows.Forms.Panel();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -92,10 +94,12 @@ namespace QuanLiQuanAn
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel22 = new System.Windows.Forms.Panel();
+            this.button19 = new System.Windows.Forms.Button();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel23 = new System.Windows.Forms.Panel();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -106,20 +110,16 @@ namespace QuanLiQuanAn
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.panel26 = new System.Windows.Forms.Panel();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.dtgvAccount = new System.Windows.Forms.DataGridView();
             this.panel27 = new System.Windows.Forms.Panel();
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button19 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTotal)).BeginInit();
             this.panel9.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -132,29 +132,29 @@ namespace QuanLiQuanAn
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.panel13.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel17.SuspendLayout();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.panel11.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.panel14.SuspendLayout();
+            this.panel21.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.panel20.SuspendLayout();
-            this.panel21.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.panel22.SuspendLayout();
+            this.panel28.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel24.SuspendLayout();
             this.panel25.SuspendLayout();
             this.panel26.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
             this.panel27.SuspendLayout();
-            this.panel28.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -184,21 +184,21 @@ namespace QuanLiQuanAn
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.dataGridView2);
+            this.panel10.Controls.Add(this.dtgvTotal);
             this.panel10.Location = new System.Drawing.Point(6, 96);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(1009, 499);
             this.panel10.TabIndex = 2;
             // 
-            // dataGridView2
+            // dtgvTotal
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 29;
-            this.dataGridView2.Size = new System.Drawing.Size(1003, 493);
-            this.dataGridView2.TabIndex = 0;
+            this.dtgvTotal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvTotal.Location = new System.Drawing.Point(3, 3);
+            this.dtgvTotal.Name = "dtgvTotal";
+            this.dtgvTotal.RowHeadersWidth = 51;
+            this.dtgvTotal.RowTemplate.Height = 29;
+            this.dtgvTotal.Size = new System.Drawing.Size(1003, 493);
+            this.dtgvTotal.TabIndex = 0;
             // 
             // panel9
             // 
@@ -466,95 +466,6 @@ namespace QuanLiQuanAn
             this.tabPage3.Text = "Danh mục";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.panel14);
-            this.tabPage4.Controls.Add(this.panel19);
-            this.tabPage4.Controls.Add(this.panel20);
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1021, 602);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Bàn ăn";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.panel22);
-            this.tabPage5.Controls.Add(this.panel26);
-            this.tabPage5.Controls.Add(this.panel27);
-            this.tabPage5.Location = new System.Drawing.Point(4, 29);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1021, 602);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Tài khoản";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.button7);
-            this.panel11.Controls.Add(this.button8);
-            this.panel11.Controls.Add(this.button9);
-            this.panel11.Controls.Add(this.button10);
-            this.panel11.Location = new System.Drawing.Point(16, 14);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(504, 101);
-            this.panel11.TabIndex = 6;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(377, 14);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(115, 71);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "Xem";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(256, 14);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(115, 71);
-            this.button8.TabIndex = 2;
-            this.button8.Text = "Sửa";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(135, 14);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(115, 71);
-            this.button9.TabIndex = 1;
-            this.button9.Text = "Xóa";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(14, 14);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(115, 71);
-            this.button10.TabIndex = 0;
-            this.button10.Text = "Thêm";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.dataGridView3);
-            this.panel12.Location = new System.Drawing.Point(16, 122);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(504, 473);
-            this.panel12.TabIndex = 7;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 0);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 29;
-            this.dataGridView3.Size = new System.Drawing.Size(498, 472);
-            this.dataGridView3.TabIndex = 1;
-            // 
             // panel13
             // 
             this.panel13.Controls.Add(this.panel16);
@@ -617,6 +528,83 @@ namespace QuanLiQuanAn
             this.label8.TabIndex = 0;
             this.label8.Text = "ID:";
             // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.dataGridView3);
+            this.panel12.Location = new System.Drawing.Point(16, 122);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(504, 473);
+            this.panel12.TabIndex = 7;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(3, 0);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.RowTemplate.Height = 29;
+            this.dataGridView3.Size = new System.Drawing.Size(498, 472);
+            this.dataGridView3.TabIndex = 1;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.button7);
+            this.panel11.Controls.Add(this.button8);
+            this.panel11.Controls.Add(this.button9);
+            this.panel11.Controls.Add(this.button10);
+            this.panel11.Location = new System.Drawing.Point(16, 14);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(504, 101);
+            this.panel11.TabIndex = 6;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(377, 14);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(115, 71);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "Xem";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(256, 14);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(115, 71);
+            this.button8.TabIndex = 2;
+            this.button8.Text = "Sửa";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(135, 14);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(115, 71);
+            this.button9.TabIndex = 1;
+            this.button9.Text = "Xóa";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(14, 14);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(115, 71);
+            this.button10.TabIndex = 0;
+            this.button10.Text = "Thêm";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.panel14);
+            this.tabPage4.Controls.Add(this.panel19);
+            this.tabPage4.Controls.Add(this.panel20);
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1021, 602);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Bàn ăn";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // panel14
             // 
             this.panel14.Controls.Add(this.panel21);
@@ -626,6 +614,32 @@ namespace QuanLiQuanAn
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(492, 475);
             this.panel14.TabIndex = 11;
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.textBox9);
+            this.panel21.Controls.Add(this.label9);
+            this.panel21.Location = new System.Drawing.Point(13, 212);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(476, 79);
+            this.panel21.TabIndex = 5;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(161, 27);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(297, 27);
+            this.textBox9.TabIndex = 3;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(15, 27);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(119, 24);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Trạng thái :";
             // 
             // panel15
             // 
@@ -745,31 +759,17 @@ namespace QuanLiQuanAn
             this.button14.Text = "Thêm";
             this.button14.UseVisualStyleBackColor = true;
             // 
-            // panel21
+            // tabPage5
             // 
-            this.panel21.Controls.Add(this.textBox9);
-            this.panel21.Controls.Add(this.label9);
-            this.panel21.Location = new System.Drawing.Point(13, 212);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(476, 79);
-            this.panel21.TabIndex = 5;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(161, 27);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(297, 27);
-            this.textBox9.TabIndex = 3;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(15, 27);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(119, 24);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Trạng thái :";
+            this.tabPage5.Controls.Add(this.panel22);
+            this.tabPage5.Controls.Add(this.panel26);
+            this.tabPage5.Controls.Add(this.panel27);
+            this.tabPage5.Location = new System.Drawing.Point(4, 29);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(1021, 602);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Tài khoản";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // panel22
             // 
@@ -782,6 +782,41 @@ namespace QuanLiQuanAn
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(492, 475);
             this.panel22.TabIndex = 14;
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(356, 393);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(115, 71);
+            this.button19.TabIndex = 7;
+            this.button19.Text = "Đặt lại mật khẩu";
+            this.button19.UseVisualStyleBackColor = true;
+            // 
+            // panel28
+            // 
+            this.panel28.Controls.Add(this.textBox13);
+            this.panel28.Controls.Add(this.label13);
+            this.panel28.Location = new System.Drawing.Point(13, 308);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(476, 79);
+            this.panel28.TabIndex = 6;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(161, 27);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(297, 27);
+            this.textBox13.TabIndex = 3;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(15, 27);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(119, 24);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Trạng thái :";
             // 
             // panel23
             // 
@@ -864,21 +899,21 @@ namespace QuanLiQuanAn
             // 
             // panel26
             // 
-            this.panel26.Controls.Add(this.dataGridView5);
+            this.panel26.Controls.Add(this.dtgvAccount);
             this.panel26.Location = new System.Drawing.Point(9, 118);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(504, 473);
             this.panel26.TabIndex = 13;
             // 
-            // dataGridView5
+            // dtgvAccount
             // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(3, 0);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.RowHeadersWidth = 51;
-            this.dataGridView5.RowTemplate.Height = 29;
-            this.dataGridView5.Size = new System.Drawing.Size(498, 472);
-            this.dataGridView5.TabIndex = 1;
+            this.dtgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvAccount.Location = new System.Drawing.Point(3, 0);
+            this.dtgvAccount.Name = "dtgvAccount";
+            this.dtgvAccount.RowHeadersWidth = 51;
+            this.dtgvAccount.RowTemplate.Height = 29;
+            this.dtgvAccount.Size = new System.Drawing.Size(498, 472);
+            this.dtgvAccount.TabIndex = 1;
             // 
             // panel27
             // 
@@ -927,41 +962,6 @@ namespace QuanLiQuanAn
             this.button18.Text = "Thêm";
             this.button18.UseVisualStyleBackColor = true;
             // 
-            // panel28
-            // 
-            this.panel28.Controls.Add(this.textBox13);
-            this.panel28.Controls.Add(this.label13);
-            this.panel28.Location = new System.Drawing.Point(13, 308);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(476, 79);
-            this.panel28.TabIndex = 6;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(161, 27);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(297, 27);
-            this.textBox13.TabIndex = 3;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(15, 27);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(119, 24);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Trạng thái :";
-            // 
-            // button19
-            // 
-            this.button19.Location = new System.Drawing.Point(356, 393);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(115, 71);
-            this.button19.TabIndex = 7;
-            this.button19.Text = "Đặt lại mật khẩu";
-            this.button19.UseVisualStyleBackColor = true;
-            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -974,7 +974,7 @@ namespace QuanLiQuanAn
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTotal)).EndInit();
             this.panel9.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -992,17 +992,18 @@ namespace QuanLiQuanAn
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.panel11.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
             this.panel18.ResumeLayout(false);
@@ -1010,9 +1011,10 @@ namespace QuanLiQuanAn
             this.panel19.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.panel20.ResumeLayout(false);
-            this.panel21.ResumeLayout(false);
-            this.panel21.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
+            this.panel28.ResumeLayout(false);
+            this.panel28.PerformLayout();
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
             this.panel24.ResumeLayout(false);
@@ -1020,10 +1022,8 @@ namespace QuanLiQuanAn
             this.panel25.ResumeLayout(false);
             this.panel25.PerformLayout();
             this.panel26.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
             this.panel27.ResumeLayout(false);
-            this.panel28.ResumeLayout(false);
-            this.panel28.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1033,7 +1033,7 @@ namespace QuanLiQuanAn
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dtgvTotal;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
@@ -1111,7 +1111,7 @@ namespace QuanLiQuanAn
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel26;
-        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridView dtgvAccount;
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using QuanLiQuanAn.DAO;
 using System.Data;
-using System.Drawing;
-using System.Text;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace QuanLiQuanAn
@@ -13,8 +10,14 @@ namespace QuanLiQuanAn
         public fAdmin()
         {
             InitializeComponent();
+            loadAccountList();
+        }
+        void loadAccountList()
+        {
+            string query = "select displayname as [Tên hiển thị] from Account";
+            dataProvider provider = new dataProvider();
+            dtgvAccount.DataSource = provider.ExcuteQuery(query);
         }
 
-      
     }
 }
