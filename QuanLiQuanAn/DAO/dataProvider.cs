@@ -10,7 +10,8 @@ namespace QuanLiQuanAn.DAO
     {
         //Khi viết query có 2 param thì phải cách nhau bởi vì nó cắt bởi khoảng cách nên dính dấu , sẽ lỗi
         string StringConnection = @"Data Source=LAPTOP-ASKIDI2M;Initial Catalog=Quanliquancafe;Integrated Security=True";
-        public  DataTable ExcuteQuery(string query,object[] parameter =null)
+        // ExcuteQuery dùng để thực thi câu query với kết quả trả về là datatable
+        public DataTable ExcuteQuery(string query,object[] parameter =null)
         {
             DataTable data = new DataTable();
             /**
@@ -43,6 +44,7 @@ namespace QuanLiQuanAn.DAO
             
             return data;
         }
+        // sử dụng để update và kết quả trả về là số lượng update thành công
         public int ExcuteNonQuery(string query, object[] parameter = null)
         {
             int data=0;
@@ -74,6 +76,7 @@ namespace QuanLiQuanAn.DAO
             }
             return data;
         }
+        // sử dụng để count(*) có bao nhiêu record
         public object ExcuteScalar(string query, object[] parameter = null)
         {
             object data = 0;
