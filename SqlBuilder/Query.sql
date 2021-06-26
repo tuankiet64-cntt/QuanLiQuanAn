@@ -52,13 +52,41 @@ create table billInfo
     foreign key (idFood) references Food(id)
 )
 
+-- add default 
+
 alter table TableFood
-alter column status NVARCHAR(100)  default 0;
+ADD DEFAULT(N'Trống') FOR status;
+
+-- Insert dữ liệu mẫu
+-- Account 
 insert into Account(username,displayname,password,type) 
 values('KietTT','KietAdmin',123456,1);
-
-
 go
+DECLARE @i int = 0
+while @i<10
+begin
+-- Table
+Insert TableFood(name)
+values (N'Bàn'+ cast(@i as nvarchar(100)))
+set @i = @i+1
+end
+go
+-- Category
+insert into FoodCategory(name) 
+values(N'Hải sản');
+insert into FoodCategory(name) 
+values(N'Heo');
+insert into FoodCategory(name) 
+values(N'Bò');
+insert into FoodCategory(name) 
+values(N'Ốc');
+insert into FoodCategory(name) 
+values(N'Nước ngọt');
+insert into FoodCategory(name) 
+values(N'Bia');
+go
+-- Define proc
+-- Proc login
 
 create proc USP_Login
 @userName varchar(100),@password nvarchar(100)
@@ -68,10 +96,13 @@ begin
 end
 go
 
-DECLARE @i int = 0
-while @i<10
+
+
+create proc USP_LoadTableList
+as
 begin
-Insert TableFood(name,status)
-values (N'Bàn'+ cast(@i as nvarchar(100)))
-set @i = @i+1
+   select * from TableFood
 end
+
+go
+delete from TableFood

@@ -44,6 +44,8 @@ namespace QuanLiQuanAn
             {   
                 Button btn = new Button() { Width=TableDAO.TableWidth ,Height =TableDAO.TableWidth };
                 btn.Text = item.Name + Environment.NewLine + item.Status;
+                btn.Click += Btn_Click;
+                btn.Tag = item;
                 switch (item.Status) {
                     case "Trống":
                         btn.BackColor = Color.Aqua;
@@ -56,6 +58,25 @@ namespace QuanLiQuanAn
                
             flpTable.Controls.Add(btn);
             }
+        }
+        public void showBill(int idtable)
+        {
+            lstBill.Items.Clear();
+            List < Menu > listBIllInfo = MenuDAO.Instance.GetListByid(idtable);
+            foreach(Menu item in listBIllInfo)
+            {
+                ListViewItem lstItem = new ListViewItem(item.FoodName.ToString());    
+                lstItem.SubItems.Add(item.Count.ToString());
+                lstItem.SubItems.Add(item.Price.ToString());
+                lstItem.SubItems.Add(item.TotalPrice.ToString());
+                lstBill.Items.Add(lstItem);
+            }
+        }
+
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            int idtable = ((sender as Button).Tag as table).Id;
+            showBill(idtable); 
         }
         #endregion
 

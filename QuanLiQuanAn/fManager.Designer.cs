@@ -38,6 +38,10 @@ namespace QuanLiQuanAn
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lstBill = new System.Windows.Forms.ListView();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnswich = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -89,14 +93,14 @@ namespace QuanLiQuanAn
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(210, 26);
             this.toolStripMenuItem5.Text = "Thông tin cá nhân";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(210, 26);
             this.toolStripMenuItem6.Text = "Đăng xuất";
             this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
             // 
@@ -122,12 +126,40 @@ namespace QuanLiQuanAn
             // 
             // lstBill
             // 
+            this.lstBill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader3,
+            this.columnHeader2,
+            this.columnHeader4});
+            this.lstBill.GridLines = true;
             this.lstBill.HideSelection = false;
             this.lstBill.Location = new System.Drawing.Point(0, 0);
             this.lstBill.Name = "lstBill";
+            this.lstBill.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lstBill.Size = new System.Drawing.Size(435, 353);
             this.lstBill.TabIndex = 0;
             this.lstBill.UseCompatibleStateImageBehavior = false;
+            this.lstBill.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Tên Món ăn";
+            this.columnHeader1.Width = 150;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Số lượng";
+            this.columnHeader3.Width = 80;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Đơn Giá";
+            this.columnHeader2.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Thành tiền";
+            this.columnHeader4.Width = 100;
             // 
             // panel3
             // 
@@ -291,5 +323,9 @@ namespace QuanLiQuanAn
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Button btndiscount;
         private System.Windows.Forms.Button btnpay;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
