@@ -11,12 +11,17 @@ namespace QuanLiQuanAn
         {
             InitializeComponent();
             loadAccountList();
+            loadFood();
+        }
+        void loadFood()
+        {
+            string query = "select * from food";
+            dtgvFood.DataSource = dataProvider.Instance.ExcuteQuery(query);
         }
         void loadAccountList()
         {
             string query = "select displayname as [Tên hiển thị] from Account";
-            dataProvider provider = new dataProvider();
-            dtgvAccount.DataSource = provider.ExcuteQuery(query);
+            dtgvAccount.DataSource = dataProvider.Instance.ExcuteQuery(query);
         }
 
     }

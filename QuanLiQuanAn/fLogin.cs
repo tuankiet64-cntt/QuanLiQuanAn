@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLiQuanAn.DAO;
 
 namespace QuanLiQuanAn
 {
@@ -19,12 +20,24 @@ namespace QuanLiQuanAn
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            fManager fm = new fManager();
-            this.Hide();
-            fm.ShowDialog();
-            this.Show();
+            string userName = txtUsername.Text;
+            string passWord = txtPw.Text;
+            if (login(userName,passWord))
+            {
+                fManager fm = new fManager();
+                this.Hide();
+                fm.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu");
+            }
         }
-
+        bool login(string userName, string passWord)
+        {
+            return AccountDAO.Instance.Login(userName,passWord);
+        }
         private void btnExits_Click(object sender, EventArgs e)
         {
             Application.Exit();

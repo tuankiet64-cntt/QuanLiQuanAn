@@ -51,5 +51,27 @@ create table billInfo
 	foreign key (idbill) references bill(id),
     foreign key (idFood) references Food(id)
 )
+
+alter table TableFood
+alter column status NVARCHAR(100)  default 0;
 insert into Account(username,displayname,password,type) 
 values('KietTT','KietAdmin',123456,1);
+
+
+go
+
+create proc USP_Login
+@userName varchar(100),@password nvarchar(100)
+as
+begin
+	select * from Account where username=@userName and  password = @password
+end
+go
+
+DECLARE @i int = 0
+while @i<10
+begin
+Insert TableFood(name,status)
+values (N'Bàn'+ cast(@i as nvarchar(100)))
+set @i = @i+1
+end
