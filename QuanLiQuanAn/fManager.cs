@@ -19,6 +19,7 @@ namespace QuanLiQuanAn
             tableLoad();
             loadCategory();
             comboboxDataSource(cbSwitchTable);
+            comboboxDataSource(cbMergeTable);
         }
         #region event
         private void toolStripMenuItem6_Click(object sender, EventArgs e)
@@ -170,6 +171,17 @@ namespace QuanLiQuanAn
         {
             cb.DataSource = TableDAO.Intance.LoadTableList();
             cb.DisplayMember = "name";
+        }
+
+        private void btnMergeTable_Click(object sender, EventArgs e)
+        {
+            int idTable1 = (lstBill.Tag as table).Id;
+            int id2Table2 = (cbMergeTable.SelectedItem as table).Id;
+            if (MessageBox.Show(string.Format("Bạn có thật sự muốn gộp bàn: {0} sang bản  {1}  ", (lstBill.Tag as table).Name, (cbMergeTable.SelectedItem as table).Name), "Thông báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                BillDAO.Instance.mergeTable(idTable1, id2Table2);
+                tableLoad();
+            }
         }
     }
 }

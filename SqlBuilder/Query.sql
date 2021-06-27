@@ -128,7 +128,7 @@ BEGIN
 END
 GO
 
-ALTER PROC USP_InstertBillInfo @idbill int, @idFood int, @count int
+Create PROC USP_InstertBillInfo @idbill int, @idFood int, @count int
 AS
 BEGIN
   DECLARE @isExillBillInfo int
@@ -140,6 +140,7 @@ BEGIN
   FROM billInfo AS b
   WHERE idbill = @idbill
   AND idFood = @idFood
+  order by id desc
   -- check món đã tồn tại chưa nếu chưa thì add rồi thì update
   IF (@isExillBillInfo > 0)
   BEGIN
@@ -147,7 +148,7 @@ BEGIN
     IF (@newCount > 0)
       UPDATE billInfo
       SET count = @foodCount + @count
-      WHERE idFood = @idFood
+      WHERE id = @isExillBillInfo
     ELSE
       DELETE dbo.billInfo
       WHERE idbill = @idbill
@@ -293,9 +294,74 @@ BEGIN
     @isSecondBIllEmpty = COUNT(*)
   FROM billinfo
   WHERE idbill = @idSecondBill
-  DROP TABLE IDBIllinfoTable2
-  PRINT @isFirstBIllEmpty;
-  PRINT @isSecondBIllEmpty;
+  DROP TABLE IDBIllinfoTable2;
+  IF (@isFirstBIllEmpty = 0)
+    UPDATE TableFood
+    SET status = N'Trống'
+    WHERE id = @idTable1
+  IF (@isSecondBIllEmpty = 0)
+    UPDATE TableFood
+    SET status = N'Trống'
+    WHERE id = @idTable2
+END
+GO
+
+Create PROC USP_mergetable @idTable1 int, @idTable2 int
+AS
+BEGIN
+  DECLARE @idFirstBill int
+  DECLARE @idSecondBill int
+  DECLARE @isFirstBIllEmpty int = 1;
+  DECLARE @isSecondBIllEmpty int = 1;
+
+
+  SELECT
+    @idFirstBill = id
+  FROM bill
+  WHERE idtable = @idTable1
+  AND status = 0
+  SELECT
+    @idSecondBill = id
+  FROM bill
+  WHERE idtable = @idTable2
+  AND status = 0
+
+  IF (@idFirstBill IS NULL)
+  BEGIN
+    EXEC USP_InstertBill @idTable = @idTable1
+    SELECT
+      @idFirstBill = MAX(id)
+    FROM bill
+    WHERE idtable = @idTable1
+    AND status = 0
+  END
+
+
+
+  IF (@idSecondBill IS NULL)
+  BEGIN
+    EXEC USP_InstertBill @idTable = @idTable2
+    SELECT
+      @idSecondBill = MAX(id)
+    FROM bill
+    WHERE idtable = @idTable2
+    AND status = 0
+  END
+  
+  UPDATE billInfo
+  SET idbill = @idSecondBill
+  WHERE idbill = @idFirstBill
+
+  SELECT
+    @isFirstBIllEmpty = COUNT(*)
+  FROM billinfo
+  WHERE idbill = @idFirstBill
+
+  SELECT
+    @isSecondBIllEmpty = COUNT(*)
+  FROM billinfo
+  WHERE idbill = @idSecondBill
+
   IF (@isFirstBIllEmpty = 0)
     UPDATE TableFood
     SET status = N'Trống'

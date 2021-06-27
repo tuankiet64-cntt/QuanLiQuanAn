@@ -61,5 +61,12 @@ namespace QuanLiQuanAn.DAO
             data = dataProvider.Instance.ExcuteNonQuery(query, new object[] { idtable1, idtable2 });
             return data > 0;
         }
+        public bool mergeTable(int idtable1,int idtable2)
+        {
+            int data = 0;
+            string query = "USP_mergetable  @idTable1 , @idTable2 ";
+            data = dataProvider.Instance.ExcuteNonQuery(query, new object[] { idtable1, idtable2 });
+            return data > 0;
+        }
     }
 }

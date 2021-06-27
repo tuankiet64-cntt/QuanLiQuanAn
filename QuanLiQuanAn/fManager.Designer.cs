@@ -43,11 +43,13 @@ namespace QuanLiQuanAn
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbMergeTable = new System.Windows.Forms.ComboBox();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.btnswich = new System.Windows.Forms.Button();
             this.cbSwitchTable = new System.Windows.Forms.ComboBox();
             this.numudDiscount = new System.Windows.Forms.NumericUpDown();
-            this.btndiscount = new System.Windows.Forms.Button();
+            this.btnMergeTable = new System.Windows.Forms.Button();
             this.btnpay = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.numudFood = new System.Windows.Forms.NumericUpDown();
@@ -164,21 +166,40 @@ namespace QuanLiQuanAn
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.cbMergeTable);
             this.panel3.Controls.Add(this.txtTotalPrice);
             this.panel3.Controls.Add(this.btnswich);
             this.panel3.Controls.Add(this.cbSwitchTable);
             this.panel3.Controls.Add(this.numudDiscount);
-            this.panel3.Controls.Add(this.btndiscount);
+            this.panel3.Controls.Add(this.btnMergeTable);
             this.panel3.Controls.Add(this.btnpay);
             this.panel3.Location = new System.Drawing.Point(649, 512);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(435, 101);
             this.panel3.TabIndex = 3;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(221, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Giảm giá";
+            // 
+            // cbMergeTable
+            // 
+            this.cbMergeTable.FormattingEnabled = true;
+            this.cbMergeTable.Location = new System.Drawing.Point(0, 25);
+            this.cbMergeTable.Name = "cbMergeTable";
+            this.cbMergeTable.Size = new System.Drawing.Size(99, 28);
+            this.cbMergeTable.TabIndex = 9;
+            // 
             // txtTotalPrice
             // 
             this.txtTotalPrice.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtTotalPrice.Location = new System.Drawing.Point(221, 39);
+            this.txtTotalPrice.Location = new System.Drawing.Point(221, 56);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.Size = new System.Drawing.Size(114, 28);
@@ -188,7 +209,7 @@ namespace QuanLiQuanAn
             // 
             // btnswich
             // 
-            this.btnswich.Location = new System.Drawing.Point(15, 21);
+            this.btnswich.Location = new System.Drawing.Point(108, 58);
             this.btnswich.Name = "btnswich";
             this.btnswich.Size = new System.Drawing.Size(99, 31);
             this.btnswich.TabIndex = 7;
@@ -199,26 +220,27 @@ namespace QuanLiQuanAn
             // cbSwitchTable
             // 
             this.cbSwitchTable.FormattingEnabled = true;
-            this.cbSwitchTable.Location = new System.Drawing.Point(15, 56);
+            this.cbSwitchTable.Location = new System.Drawing.Point(0, 61);
             this.cbSwitchTable.Name = "cbSwitchTable";
             this.cbSwitchTable.Size = new System.Drawing.Size(99, 28);
             this.cbSwitchTable.TabIndex = 6;
             // 
             // numudDiscount
             // 
-            this.numudDiscount.Location = new System.Drawing.Point(120, 56);
+            this.numudDiscount.Location = new System.Drawing.Point(221, 25);
             this.numudDiscount.Name = "numudDiscount";
-            this.numudDiscount.Size = new System.Drawing.Size(94, 27);
+            this.numudDiscount.Size = new System.Drawing.Size(114, 27);
             this.numudDiscount.TabIndex = 5;
             // 
-            // btndiscount
+            // btnMergeTable
             // 
-            this.btndiscount.Location = new System.Drawing.Point(120, 21);
-            this.btndiscount.Name = "btndiscount";
-            this.btndiscount.Size = new System.Drawing.Size(94, 31);
-            this.btndiscount.TabIndex = 4;
-            this.btndiscount.Text = "Giảm giá";
-            this.btndiscount.UseVisualStyleBackColor = true;
+            this.btnMergeTable.Location = new System.Drawing.Point(108, 21);
+            this.btnMergeTable.Name = "btnMergeTable";
+            this.btnMergeTable.Size = new System.Drawing.Size(94, 31);
+            this.btnMergeTable.TabIndex = 4;
+            this.btnMergeTable.Text = "Gộp bàn";
+            this.btnMergeTable.UseVisualStyleBackColor = true;
+            this.btnMergeTable.Click += new System.EventHandler(this.btnMergeTable_Click);
             // 
             // btnpay
             // 
@@ -339,12 +361,14 @@ namespace QuanLiQuanAn
         private System.Windows.Forms.Button btnswich;
         private System.Windows.Forms.ComboBox cbSwitchTable;
         private System.Windows.Forms.NumericUpDown numudDiscount;
-        private System.Windows.Forms.Button btndiscount;
+        private System.Windows.Forms.Button btnMergeTable;
         private System.Windows.Forms.Button btnpay;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.TextBox txtTotalPrice;
+        private System.Windows.Forms.ComboBox cbMergeTable;
+        private System.Windows.Forms.Label label1;
     }
 }
