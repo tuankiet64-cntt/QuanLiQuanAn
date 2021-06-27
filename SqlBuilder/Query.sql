@@ -164,85 +164,145 @@ BEGIN
 END
 GO
 
- create trigger UTG_UpdateBillInfo
- on billinfo for insert,update
- as 
- begin
-	Declare @idbill int
-	select @idbill=idbill from Inserted
-	declare @idTable int
-	declare @countBill int 
-	select @idTable =idtable from bill where id=@idbill and status =0
-	select @countBill=COUNT(*) from billInfo where idbill =@idbill
-	if(@countBill>0)
-	update  TableFood set status =N'Có người' where id =@idTable
-	else
-	update  TableFood set status =N'Trống' where id =@idTable
- end
- go
+CREATE TRIGGER UTG_UpdateBillInfo
+ON billinfo
+FOR INSERT, UPDATE
+AS
+BEGIN
+  DECLARE @idbill int
+  SELECT
+    @idbill = idbill
+  FROM Inserted
+  DECLARE @idTable int
+  DECLARE @countBill int
+  SELECT
+    @idTable = idtable
+  FROM bill
+  WHERE id = @idbill
+  AND status = 0
+  SELECT
+    @countBill = COUNT(*)
+  FROM billInfo
+  WHERE idbill = @idbill
+  IF (@countBill > 0)
+    UPDATE TableFood
+    SET status = N'Có người'
+    WHERE id = @idTable
+  ELSE
+    UPDATE TableFood
+    SET status = N'Trống'
+    WHERE id = @idTable
+END
+GO
 
 
 
- create trigger UTG_UpdateBill 
- on bill for update
- as
- begin
-	declare @idBill int
-	declare @idTable int
-	declare @count int
-	select @idBill = id from inserted
-	select @idTable = idtable from bill where id=@idBill
-	-- kiểm tra bàn đó còn cái bill nào chưa thanh toán hay k
-	select @count=count(*) from bill where idtable=@idTable and status =0
-	if(@count = 0)
-	update TableFood set status = N'Trống' where  id=@idTable
- end 
- go
+CREATE TRIGGER UTG_UpdateBill
+ON bill
+FOR UPDATE
+AS
+BEGIN
+  DECLARE @idBill int
+  DECLARE @idTable int
+  DECLARE @count int
+  SELECT
+    @idBill = id
+  FROM inserted
+  SELECT
+    @idTable = idtable
+  FROM bill
+  WHERE id = @idBill
+  -- kiểm tra bàn đó còn cái bill nào chưa thanh toán hay k
+  SELECT
+    @count = COUNT(*)
+  FROM bill
+  WHERE idtable = @idTable
+  AND status = 0
+  IF (@count = 0)
+    UPDATE TableFood
+    SET status = N'Trống'
+    WHERE id = @idTable
+END
+GO
 
 
- alter table bill
- add discount int
+ALTER TABLE bill
+ADD discount int
 
- alter table bill
- add default 0 for discount
- go
+ALTER TABLE bill
+ADD DEFAULT 0 FOR discount
+GO
 
- create proc USP_switchtable
- @idTable1 int, @idTable2 int
- as
- begin
-	declare @idFirstBill int
-	declare @idSecondBill int
-	declare @isFirstBIllEmpty  int =1;
-	declare @isSecondBIllEmpty  int =1;
-
-
-	select @idFirstBill=id from bill where idtable =@idTable1 and status =0 
-	select @idSecondBill=id from bill where idtable =@idTable2 and status =0 
-	if(@idFirstBill is null)
-	begin
-	exec USP_InstertBill @idTable=@idTable1
-	select @idFirstBill=max(id) from bill where idtable=@idTable1 and status=0
-	end
+CREATE PROC USP_switchtable @idTable1 int, @idTable2 int
+AS
+BEGIN
+  DECLARE @idFirstBill int
+  DECLARE @idSecondBill int
+  DECLARE @isFirstBIllEmpty int = 1;
+  DECLARE @isSecondBIllEmpty int = 1;
 
 
+  SELECT
+    @idFirstBill = id
+  FROM bill
+  WHERE idtable = @idTable1
+  AND status = 0
+  SELECT
+    @idSecondBill = id
+  FROM bill
+  WHERE idtable = @idTable2
+  AND status = 0
+  IF (@idFirstBill IS NULL)
+  BEGIN
+    EXEC USP_InstertBill @idTable = @idTable1
+    SELECT
+      @idFirstBill = MAX(id)
+    FROM bill
+    WHERE idtable = @idTable1
+    AND status = 0
+  END
 
-	if(@idSecondBill is null)
-	begin
-	exec USP_InstertBill @idTable=@idTable2
-	select @idSecondBill=max(id) from bill where idtable=@idTable2 and status=0
-	end
-	select id into IDBIllinfoTable2 from billInfo where idbill=@idSecondBill
-	update billInfo set idbill=@idSecondBill where idbill=@idFirstBill
-	update billInfo set idbill=@idFirstBill where idbill in (select * from IDBIllinfoTable2)
-	select @isFirstBIllEmpty = COUNT(*) from billinfo where idbill=@idFirstBill
-	select @isSecondBIllEmpty = COUNT(*) from billinfo where idbill=@idSecondBill
-	drop table IDBIllinfoTable2
-	print @isFirstBIllEmpty;
-	print @isSecondBIllEmpty;
-	if(@isFirstBIllEmpty =0)
-		update TableFood set status =N'Trống' where id=@idTable1
-	if(@isSecondBIllEmpty =0)
-		update TableFood set status =N'Trống' where id=@idTable2
- end
- go
+
+
+  IF (@idSecondBill IS NULL)
+  BEGIN
+    EXEC USP_InstertBill @idTable = @idTable2
+    SELECT
+      @idSecondBill = MAX(id)
+    FROM bill
+    WHERE idtable = @idTable2
+    AND status = 0
+  END
+  SELECT
+    id INTO IDBIllinfoTable2
+  FROM billInfo
+  WHERE idbill = @idSecondBill
+  UPDATE billInfo
+  SET idbill = @idSecondBill
+  WHERE idbill = @idFirstBill
+  UPDATE billInfo
+  SET idbill = @idFirstBill
+  WHERE idbill IN (SELECT
+    *
+  FROM IDBIllinfoTable2)
+  SELECT
+    @isFirstBIllEmpty = COUNT(*)
+  FROM billinfo
+  WHERE idbill = @idFirstBill
+  SELECT
+    @isSecondBIllEmpty = COUNT(*)
+  FROM billinfo
+  WHERE idbill = @idSecondBill
+  DROP TABLE IDBIllinfoTable2
+  PRINT @isFirstBIllEmpty;
+  PRINT @isSecondBIllEmpty;
+  IF (@isFirstBIllEmpty = 0)
+    UPDATE TableFood
+    SET status = N'Trống'
+    WHERE id = @idTable1
+  IF (@isSecondBIllEmpty = 0)
+    UPDATE TableFood
+    SET status = N'Trống'
+    WHERE id = @idTable2
+END
+GO
