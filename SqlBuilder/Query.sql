@@ -97,25 +97,6 @@ INSERT INTO Food (name, idCategory, price)
   VALUES (N'Tiger', 6, 20000);
 GO
 --Thêm bill
-INSERT INTO bill (datecheckout, idtable, status)
-  VALUES (NULL, 21, 0);
-INSERT INTO bill (datecheckout, idtable, status)
-  VALUES (NULL, 22, 0);
-INSERT INTO bill (datecheckout, idtable, status)
-  VALUES (NULL, 23, 1);
-INSERT INTO bill (datecheckout, idtable, status)
-  VALUES (NULL, 21, 1);
-GO
--- thêm billinfo
-INSERT INTO billInfo (idbill, idFood, count)
-  VALUES (4, 1, 2);
-INSERT INTO billInfo (idbill, idFood, count)
-  VALUES (5, 2, 3);
-INSERT INTO billInfo (idbill, idFood, count)
-  VALUES (2, 1, 2);
-INSERT INTO billInfo (idbill, idFood, count)
-  VALUES (3, 4, 2);
-GO
 -- Define proc
 -- Proc login
 
