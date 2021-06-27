@@ -45,8 +45,8 @@ namespace QuanLiQuanAn
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.btnswich = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.cbSwitchTable = new System.Windows.Forms.ComboBox();
+            this.numudDiscount = new System.Windows.Forms.NumericUpDown();
             this.btndiscount = new System.Windows.Forms.Button();
             this.btnpay = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -58,7 +58,7 @@ namespace QuanLiQuanAn
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numudDiscount)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numudFood)).BeginInit();
             this.SuspendLayout();
@@ -166,8 +166,8 @@ namespace QuanLiQuanAn
             // 
             this.panel3.Controls.Add(this.txtTotalPrice);
             this.panel3.Controls.Add(this.btnswich);
-            this.panel3.Controls.Add(this.comboBox3);
-            this.panel3.Controls.Add(this.numericUpDown2);
+            this.panel3.Controls.Add(this.cbSwitchTable);
+            this.panel3.Controls.Add(this.numudDiscount);
             this.panel3.Controls.Add(this.btndiscount);
             this.panel3.Controls.Add(this.btnpay);
             this.panel3.Location = new System.Drawing.Point(649, 512);
@@ -194,21 +194,22 @@ namespace QuanLiQuanAn
             this.btnswich.TabIndex = 7;
             this.btnswich.Text = "Chuyển bàn";
             this.btnswich.UseVisualStyleBackColor = true;
+            this.btnswich.Click += new System.EventHandler(this.btnswich_Click);
             // 
-            // comboBox3
+            // cbSwitchTable
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(15, 56);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(99, 28);
-            this.comboBox3.TabIndex = 6;
+            this.cbSwitchTable.FormattingEnabled = true;
+            this.cbSwitchTable.Location = new System.Drawing.Point(15, 56);
+            this.cbSwitchTable.Name = "cbSwitchTable";
+            this.cbSwitchTable.Size = new System.Drawing.Size(99, 28);
+            this.cbSwitchTable.TabIndex = 6;
             // 
-            // numericUpDown2
+            // numudDiscount
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(120, 56);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(94, 27);
-            this.numericUpDown2.TabIndex = 5;
+            this.numudDiscount.Location = new System.Drawing.Point(120, 56);
+            this.numudDiscount.Name = "numudDiscount";
+            this.numudDiscount.Size = new System.Drawing.Size(94, 27);
+            this.numudDiscount.TabIndex = 5;
             // 
             // btndiscount
             // 
@@ -310,7 +311,7 @@ namespace QuanLiQuanAn
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numudDiscount)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numudFood)).EndInit();
             this.ResumeLayout(false);
@@ -336,8 +337,8 @@ namespace QuanLiQuanAn
         private System.Windows.Forms.ComboBox cbCate;
         private System.Windows.Forms.FlowLayoutPanel flpTable;
         private System.Windows.Forms.Button btnswich;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.ComboBox cbSwitchTable;
+        private System.Windows.Forms.NumericUpDown numudDiscount;
         private System.Windows.Forms.Button btndiscount;
         private System.Windows.Forms.Button btnpay;
         private System.Windows.Forms.ColumnHeader columnHeader1;

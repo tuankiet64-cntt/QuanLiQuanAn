@@ -18,6 +18,7 @@ namespace QuanLiQuanAn
             InitializeComponent();
             tableLoad();
             loadCategory();
+            comboboxDataSource(cbSwitchTable);
         }
         #region event
         private void toolStripMenuItem6_Click(object sender, EventArgs e)
@@ -137,17 +138,38 @@ namespace QuanLiQuanAn
 
         private void btnpay_Click(object sender, EventArgs e)
         {
-            table table = lstBill.Tag as table;
+            table table = lstBill.Tag as table; 
             int idBill = BillDAO.Instance.getBillidByTableId(table.Id);
+            int discount = (int)numudDiscount.Value > 0 ? (int)numudDiscount.Value : 0;
+            float totalPrice = float.Parse(txtTotalPrice.Text.Split(',')[0]);
+            float totalPriceFinal = totalPrice - (totalPrice / 100) * discount;
             if (idBill != -1)
             {
-                if(MessageBox.Show("Thanh toán bàn "+table.Name,"Thông báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                if(MessageBox.Show(string.Format("Thanh toán bàn {0} \n Tổng tiền là : {1} sau khi giảm giá : {2} % ",table.Name,totalPriceFinal,discount),"Thông báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    BillDAO.Instance.BillCheckout(idBill);
+                    BillDAO.Instance.BillCheckout(idBill,discount);
                 }
             }
             showBill(table.Id);
             tableLoad();
+        }
+
+        private void btnswich_Click(object sender, EventArgs e)
+        {
+            
+            int idTable1 = (lstBill.Tag as table).Id;
+            int id2Table2 = (cbSwitchTable.SelectedItem as table).Id;
+            if (MessageBox.Show(string.Format("Bạn có thật sự muốn chuyển bàn: {0} sang bản  {1}  ", (lstBill.Tag as table).Name, (cbSwitchTable.SelectedItem as table).Name), "Thông báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                BillDAO.Instance.swithtable(idTable1, id2Table2);
+                tableLoad();
+            }
+                
+        }
+        public void comboboxDataSource(ComboBox cb)
+        {
+            cb.DataSource = TableDAO.Intance.LoadTableList();
+            cb.DisplayMember = "name";
         }
     }
 }

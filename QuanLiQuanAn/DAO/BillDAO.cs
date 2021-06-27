@@ -48,10 +48,17 @@ namespace QuanLiQuanAn.DAO
             }
             
         }
-        public bool BillCheckout(int id) {
+        public bool BillCheckout(int id,int discount) {
             int data = 0;
-            string query = "update bill set status =1 where id= " + id;
+            string query = "update bill set status =1,discount="+discount+" where id= " + id;
             data=dataProvider.Instance.ExcuteNonQuery(query);
+            return data > 0;
+        }
+        public bool swithtable(int idtable1,int idtable2)
+        {
+            int data = 0;
+            string query = "USP_switchtable @idTable1 , @idTable2 ";
+            data = dataProvider.Instance.ExcuteNonQuery(query, new object[] { idtable1, idtable2 });
             return data > 0;
         }
     }
