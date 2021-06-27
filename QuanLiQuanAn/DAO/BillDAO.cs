@@ -29,5 +29,30 @@ namespace QuanLiQuanAn.DAO
             return -1;
 
         }
+        public bool InsertBill(int id)
+        {
+            int data = 0;
+            data=dataProvider.Instance.ExcuteNonQuery("USP_InstertBill @idTable",new object[]{id});
+            return data>0;
+        }
+        public int selectMaxIdBill(int id)
+        {
+            try
+            {
+                int idbill = (int)dataProvider.Instance.ExcuteScalar("select max(id) from bill where idtable =" + id);
+                return idbill;
+            }
+            catch (Exception ex)
+            {
+                return 1;
+            }
+            
+        }
+        public bool BillCheckout(int id) {
+            int data = 0;
+            string query = "update bill set status =1 where id= " + id;
+            data=dataProvider.Instance.ExcuteNonQuery(query);
+            return data > 0;
+        }
     }
 }

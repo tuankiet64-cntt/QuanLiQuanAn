@@ -25,6 +25,12 @@ namespace QuanLiQuanAn.DAO
             }
             return listbill;
         }
-       
+        public bool InsertBillInfo(int idbill,int idFood,int count)
+        {
+            int data = 0;
+            data = dataProvider.Instance.ExcuteNonQuery("USP_InstertBillInfo @idbill , @idFood , @count", new object[] { idbill,idFood,count });
+            return data > 0;
+        }
+
     }
 }

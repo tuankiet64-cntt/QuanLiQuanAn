@@ -16,7 +16,7 @@ namespace QuanLiQuanAn.DAO
         public List<Menu> GetListByid(int idTable)
         {
             List<Menu> listMenu = new List<Menu>();
-            DataTable data =dataProvider.Instance.ExcuteQuery("select Food.name,Food.price,bi.count,Food.price*bi.count as totalPrice  from bill as b , billInfo as bi ,Food  where b.id=bi.idbill and bi.idFood = Food.id and b.idtable=" + idTable);
+            DataTable data =dataProvider.Instance.ExcuteQuery("select Food.name,Food.price,bi.count,Food.price*bi.count as totalPrice  from bill as b , billInfo as bi ,Food  where b.id=bi.idbill and bi.idFood = Food.id and b.status=0 and b.idtable=" + idTable);
             foreach(DataRow row in data.Rows)
             {
                 Menu menu = new Menu(row);

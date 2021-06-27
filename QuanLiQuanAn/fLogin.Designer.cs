@@ -116,6 +116,7 @@ namespace QuanLiQuanAn
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(286, 27);
             this.txtUsername.TabIndex = 1;
+            this.txtUsername.Text = "KietTT";
             // 
             // label1
             // 

@@ -43,23 +43,24 @@ namespace QuanLiQuanAn
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.btnswich = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.btndiscount = new System.Windows.Forms.Button();
             this.btnpay = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numudFood = new System.Windows.Forms.NumericUpDown();
             this.btnadd = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbFood = new System.Windows.Forms.ComboBox();
+            this.cbCate = new System.Windows.Forms.ComboBox();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numudFood)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -163,6 +164,7 @@ namespace QuanLiQuanAn
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.txtTotalPrice);
             this.panel3.Controls.Add(this.btnswich);
             this.panel3.Controls.Add(this.comboBox3);
             this.panel3.Controls.Add(this.numericUpDown2);
@@ -172,6 +174,17 @@ namespace QuanLiQuanAn
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(435, 101);
             this.panel3.TabIndex = 3;
+            // 
+            // txtTotalPrice
+            // 
+            this.txtTotalPrice.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtTotalPrice.Location = new System.Drawing.Point(221, 39);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.ReadOnly = true;
+            this.txtTotalPrice.Size = new System.Drawing.Size(114, 28);
+            this.txtTotalPrice.TabIndex = 8;
+            this.txtTotalPrice.Text = "0";
+            this.txtTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnswich
             // 
@@ -192,14 +205,14 @@ namespace QuanLiQuanAn
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(169, 56);
+            this.numericUpDown2.Location = new System.Drawing.Point(120, 56);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(94, 27);
             this.numericUpDown2.TabIndex = 5;
             // 
             // btndiscount
             // 
-            this.btndiscount.Location = new System.Drawing.Point(169, 21);
+            this.btndiscount.Location = new System.Drawing.Point(120, 21);
             this.btndiscount.Name = "btndiscount";
             this.btndiscount.Size = new System.Drawing.Size(94, 31);
             this.btndiscount.TabIndex = 4;
@@ -214,30 +227,31 @@ namespace QuanLiQuanAn
             this.btnpay.TabIndex = 3;
             this.btnpay.Text = "Thanh toán";
             this.btnpay.UseVisualStyleBackColor = true;
+            this.btnpay.Click += new System.EventHandler(this.btnpay_Click);
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.numericUpDown1);
+            this.panel4.Controls.Add(this.numudFood);
             this.panel4.Controls.Add(this.btnadd);
-            this.panel4.Controls.Add(this.comboBox2);
-            this.panel4.Controls.Add(this.comboBox1);
+            this.panel4.Controls.Add(this.cbFood);
+            this.panel4.Controls.Add(this.cbCate);
             this.panel4.Location = new System.Drawing.Point(649, 52);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(435, 95);
             this.panel4.TabIndex = 4;
             // 
-            // numericUpDown1
+            // numudFood
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(369, 36);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.numudFood.Location = new System.Drawing.Point(369, 36);
+            this.numudFood.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(45, 27);
-            this.numericUpDown1.TabIndex = 3;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.numudFood.Name = "numudFood";
+            this.numudFood.Size = new System.Drawing.Size(45, 27);
+            this.numudFood.TabIndex = 3;
+            this.numudFood.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -251,22 +265,24 @@ namespace QuanLiQuanAn
             this.btnadd.TabIndex = 2;
             this.btnadd.Text = "Thêm món";
             this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
-            // comboBox2
+            // cbFood
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(15, 51);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(248, 28);
-            this.comboBox2.TabIndex = 1;
+            this.cbFood.FormattingEnabled = true;
+            this.cbFood.Location = new System.Drawing.Point(15, 51);
+            this.cbFood.Name = "cbFood";
+            this.cbFood.Size = new System.Drawing.Size(248, 28);
+            this.cbFood.TabIndex = 1;
             // 
-            // comboBox1
+            // cbCate
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(15, 17);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(248, 28);
-            this.comboBox1.TabIndex = 0;
+            this.cbCate.FormattingEnabled = true;
+            this.cbCate.Location = new System.Drawing.Point(15, 17);
+            this.cbCate.Name = "cbCate";
+            this.cbCate.Size = new System.Drawing.Size(248, 28);
+            this.cbCate.TabIndex = 0;
+            this.cbCate.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // flpTable
             // 
@@ -293,9 +309,10 @@ namespace QuanLiQuanAn
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numudFood)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,10 +330,10 @@ namespace QuanLiQuanAn
         private System.Windows.Forms.ListView lstBill;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numudFood;
         private System.Windows.Forms.Button btnadd;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbFood;
+        private System.Windows.Forms.ComboBox cbCate;
         private System.Windows.Forms.FlowLayoutPanel flpTable;
         private System.Windows.Forms.Button btnswich;
         private System.Windows.Forms.ComboBox comboBox3;
@@ -327,5 +344,6 @@ namespace QuanLiQuanAn
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.TextBox txtTotalPrice;
     }
 }
