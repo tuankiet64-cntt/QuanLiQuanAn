@@ -13,13 +13,21 @@ namespace QuanLiQuanAn
 {
     public partial class fManager : Form
     {
-        public fManager()
+        private Account loginAccount;
+
+        public Account LoginAccount { 
+            get => loginAccount;
+            set { loginAccount = value; ChangePosition(value.Type); }
+             }
+
+        public fManager(Account account)
         {
             InitializeComponent();
             tableLoad();
             loadCategory();
             comboboxDataSource(cbSwitchTable);
             comboboxDataSource(cbMergeTable);
+            this.LoginAccount = account;
         }
         #region event
         private void toolStripMenuItem6_Click(object sender, EventArgs e)
@@ -29,7 +37,7 @@ namespace QuanLiQuanAn
 
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
-            FInfo fi = new FInfo();
+            FInfo fi = new FInfo(loginAccount);
             fi.ShowDialog();
         }
 
@@ -40,6 +48,11 @@ namespace QuanLiQuanAn
         }
         #endregion
         #region Method
+        void ChangePosition(int type)
+        {
+            AdminToolMenuStrip.Enabled = type == 1 ? true : false;
+            infoToolScrpit.Text += "( "+ loginAccount.DisplayName + " )";
+        }
         void loadCategory()
         {
             List<Category> ListCategory = CategoryDAO.Instance.getListCategory();

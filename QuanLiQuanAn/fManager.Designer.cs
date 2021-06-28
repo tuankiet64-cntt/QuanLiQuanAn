@@ -30,8 +30,8 @@ namespace QuanLiQuanAn
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.AdminToolMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoToolScrpit = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,41 +69,41 @@ namespace QuanLiQuanAn
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2});
+            this.AdminToolMenuStrip,
+            this.infoToolScrpit});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1084, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // toolStripMenuItem1
+            // AdminToolMenuStrip
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(67, 24);
-            this.toolStripMenuItem1.Text = "Admin";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.AdminToolMenuStrip.Name = "AdminToolMenuStrip";
+            this.AdminToolMenuStrip.Size = new System.Drawing.Size(67, 24);
+            this.AdminToolMenuStrip.Text = "Admin";
+            this.AdminToolMenuStrip.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
-            // toolStripMenuItem2
+            // infoToolScrpit
             // 
-            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.infoToolScrpit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem5,
             this.toolStripMenuItem6});
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(151, 24);
-            this.toolStripMenuItem2.Text = "Thông tin tài khoản";
+            this.infoToolScrpit.Name = "infoToolScrpit";
+            this.infoToolScrpit.Size = new System.Drawing.Size(151, 24);
+            this.infoToolScrpit.Text = "Thông tin tài khoản";
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(210, 26);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItem5.Text = "Thông tin cá nhân";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(210, 26);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItem6.Text = "Đăng xuất";
             this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
             // 
@@ -343,8 +343,8 @@ namespace QuanLiQuanAn
 
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem AdminToolMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem infoToolScrpit;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;

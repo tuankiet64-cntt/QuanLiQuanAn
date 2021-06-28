@@ -30,19 +30,19 @@ namespace QuanLiQuanAn
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDisplayName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPW = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNewPW = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtReplaceNew = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -55,12 +55,20 @@ namespace QuanLiQuanAn
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtUserName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(555, 84);
             this.panel1.TabIndex = 1;
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(190, 29);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.ReadOnly = true;
+            this.txtUserName.Size = new System.Drawing.Size(298, 27);
+            this.txtUserName.TabIndex = 1;
             // 
             // label1
             // 
@@ -72,29 +80,21 @@ namespace QuanLiQuanAn
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đăng nhập";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(190, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(298, 27);
-            this.textBox1.TabIndex = 1;
-            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txtDisplayName);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(12, 102);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(555, 84);
             this.panel2.TabIndex = 2;
             // 
-            // textBox2
+            // txtDisplayName
             // 
-            this.textBox2.Location = new System.Drawing.Point(190, 29);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(298, 27);
-            this.textBox2.TabIndex = 1;
+            this.txtDisplayName.Location = new System.Drawing.Point(190, 29);
+            this.txtDisplayName.Name = "txtDisplayName";
+            this.txtDisplayName.Size = new System.Drawing.Size(298, 27);
+            this.txtDisplayName.TabIndex = 1;
             // 
             // label2
             // 
@@ -108,19 +108,20 @@ namespace QuanLiQuanAn
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.txtPW);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(12, 183);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(555, 84);
             this.panel3.TabIndex = 3;
             // 
-            // textBox3
+            // txtPW
             // 
-            this.textBox3.Location = new System.Drawing.Point(190, 29);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(298, 27);
-            this.textBox3.TabIndex = 1;
+            this.txtPW.Location = new System.Drawing.Point(190, 29);
+            this.txtPW.Name = "txtPW";
+            this.txtPW.Size = new System.Drawing.Size(298, 27);
+            this.txtPW.TabIndex = 1;
+            this.txtPW.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -134,19 +135,20 @@ namespace QuanLiQuanAn
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.textBox4);
+            this.panel4.Controls.Add(this.txtNewPW);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(12, 273);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(555, 84);
             this.panel4.TabIndex = 4;
             // 
-            // textBox4
+            // txtNewPW
             // 
-            this.textBox4.Location = new System.Drawing.Point(190, 29);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(298, 27);
-            this.textBox4.TabIndex = 1;
+            this.txtNewPW.Location = new System.Drawing.Point(190, 29);
+            this.txtNewPW.Name = "txtNewPW";
+            this.txtNewPW.Size = new System.Drawing.Size(298, 27);
+            this.txtNewPW.TabIndex = 1;
+            this.txtNewPW.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -160,19 +162,20 @@ namespace QuanLiQuanAn
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.textBox5);
+            this.panel5.Controls.Add(this.txtReplaceNew);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(12, 363);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(555, 84);
             this.panel5.TabIndex = 3;
             // 
-            // textBox5
+            // txtReplaceNew
             // 
-            this.textBox5.Location = new System.Drawing.Point(190, 29);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(298, 27);
-            this.textBox5.TabIndex = 1;
+            this.txtReplaceNew.Location = new System.Drawing.Point(190, 29);
+            this.txtReplaceNew.Name = "txtReplaceNew";
+            this.txtReplaceNew.Size = new System.Drawing.Size(298, 27);
+            this.txtReplaceNew.TabIndex = 1;
+            this.txtReplaceNew.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -192,6 +195,7 @@ namespace QuanLiQuanAn
             this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnExit
             // 
@@ -201,6 +205,7 @@ namespace QuanLiQuanAn
             this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FInfo
             // 
@@ -216,6 +221,7 @@ namespace QuanLiQuanAn
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FInfo";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -234,19 +240,19 @@ namespace QuanLiQuanAn
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDisplayName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPW;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNewPW;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtReplaceNew;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnExit;

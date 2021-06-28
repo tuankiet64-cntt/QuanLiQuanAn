@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLiQuanAn.DAO;
+using QuanLiQuanAn.DTO;
 
 namespace QuanLiQuanAn
 {
@@ -24,7 +25,8 @@ namespace QuanLiQuanAn
             string passWord = txtPw.Text;
             if (login(userName,passWord))
             {
-                fManager fm = new fManager();
+                Account account = AccountDAO.Instance.GetAccountByUserName(userName);
+                fManager fm = new fManager(account);
                 this.Hide();
                 fm.ShowDialog();
                 this.Show();

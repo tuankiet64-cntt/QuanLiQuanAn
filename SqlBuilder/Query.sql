@@ -386,4 +386,25 @@ begin
 end
 go
 
-select * from bill
+insert Account  (username,displayname,password)
+values('ketoan',N'Kế toán',123)
+go
+
+create proc USP_EditInfoAccount
+@userName nvarchar(100),@pw nvarchar(100),@displayName nvarchar(100),@newPassword nvarchar(100)
+as
+begin
+	declare @isTrueUser int = 0
+
+	select @isTrueUser=count(*) from Account where username=@userName and password=@pw
+	if(@isTrueUser>0)
+	begin
+	if(@newPassword =null  or @newPassword= '')
+	begin
+	update Account set displayname=@displayName where username=@userName
+	end
+	else
+		update Account set displayname=@displayName,password=@newPassword where username=@userName
+	end
+end
+go
