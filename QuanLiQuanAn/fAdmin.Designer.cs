@@ -35,8 +35,8 @@ namespace QuanLiQuanAn
             this.dtgvTotal = new System.Windows.Forms.DataGridView();
             this.panel9 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpkCheckout = new System.Windows.Forms.DateTimePicker();
+            this.dtpkCheckin = new System.Windows.Forms.DateTimePicker();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvFood = new System.Windows.Forms.DataGridView();
@@ -116,6 +116,8 @@ namespace QuanLiQuanAn
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -184,6 +186,8 @@ namespace QuanLiQuanAn
             // 
             // panel10
             // 
+            this.panel10.Controls.Add(this.txtTotal);
+            this.panel10.Controls.Add(this.label14);
             this.panel10.Controls.Add(this.dtgvTotal);
             this.panel10.Location = new System.Drawing.Point(6, 96);
             this.panel10.Name = "panel10";
@@ -192,19 +196,20 @@ namespace QuanLiQuanAn
             // 
             // dtgvTotal
             // 
+            this.dtgvTotal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvTotal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvTotal.Location = new System.Drawing.Point(3, 3);
             this.dtgvTotal.Name = "dtgvTotal";
             this.dtgvTotal.RowHeadersWidth = 51;
             this.dtgvTotal.RowTemplate.Height = 29;
-            this.dtgvTotal.Size = new System.Drawing.Size(1003, 493);
+            this.dtgvTotal.Size = new System.Drawing.Size(1003, 448);
             this.dtgvTotal.TabIndex = 0;
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.button6);
-            this.panel9.Controls.Add(this.dateTimePicker2);
-            this.panel9.Controls.Add(this.dateTimePicker1);
+            this.panel9.Controls.Add(this.dtpkCheckout);
+            this.panel9.Controls.Add(this.dtpkCheckin);
             this.panel9.Location = new System.Drawing.Point(6, 6);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1009, 84);
@@ -218,20 +223,21 @@ namespace QuanLiQuanAn
             this.button6.TabIndex = 2;
             this.button6.Text = "Thống kê";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // dateTimePicker2
+            // dtpkCheckout
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(669, 27);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(310, 27);
-            this.dateTimePicker2.TabIndex = 1;
+            this.dtpkCheckout.Location = new System.Drawing.Point(669, 27);
+            this.dtpkCheckout.Name = "dtpkCheckout";
+            this.dtpkCheckout.Size = new System.Drawing.Size(310, 27);
+            this.dtpkCheckout.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // dtpkCheckin
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(27, 27);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(319, 27);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dtpkCheckin.Location = new System.Drawing.Point(27, 27);
+            this.dtpkCheckin.Name = "dtpkCheckin";
+            this.dtpkCheckin.Size = new System.Drawing.Size(319, 27);
+            this.dtpkCheckin.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -962,6 +968,24 @@ namespace QuanLiQuanAn
             this.button18.Text = "Thêm";
             this.button18.UseVisualStyleBackColor = true;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(774, 467);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(80, 20);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Tổng cộng";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(860, 464);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(135, 27);
+            this.txtTotal.TabIndex = 2;
+            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -974,6 +998,7 @@ namespace QuanLiQuanAn
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTotal)).EndInit();
             this.panel9.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -1036,8 +1061,8 @@ namespace QuanLiQuanAn
         private System.Windows.Forms.DataGridView dtgvTotal;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpkCheckout;
+        private System.Windows.Forms.DateTimePicker dtpkCheckin;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dtgvFood;
@@ -1117,5 +1142,7 @@ namespace QuanLiQuanAn
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtTotal;
     }
 }

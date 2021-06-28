@@ -135,7 +135,7 @@ namespace QuanLiQuanAn
             showBill(table.Id);
             tableLoad();
         }
-        #endregion
+      
 
         private void btnpay_Click(object sender, EventArgs e)
         {
@@ -148,7 +148,7 @@ namespace QuanLiQuanAn
             {
                 if(MessageBox.Show(string.Format("Thanh toán bàn {0} \n Tổng tiền là : {1} sau khi giảm giá : {2} % ",table.Name,totalPriceFinal,discount),"Thông báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    BillDAO.Instance.BillCheckout(idBill,discount);
+                    BillDAO.Instance.BillCheckout(idBill,discount, totalPriceFinal);
                 }
             }
             showBill(table.Id);
@@ -183,5 +183,6 @@ namespace QuanLiQuanAn
                 tableLoad();
             }
         }
+        #endregion
     }
 }

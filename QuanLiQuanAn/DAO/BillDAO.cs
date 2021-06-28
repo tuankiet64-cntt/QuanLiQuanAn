@@ -48,9 +48,9 @@ namespace QuanLiQuanAn.DAO
             }
             
         }
-        public bool BillCheckout(int id,int discount) {
+        public bool BillCheckout(int id,int discount,float totalPrice) {
             int data = 0;
-            string query = "update bill set status =1,discount="+discount+" where id= " + id;
+            string query = "update bill set datecheckout=GETDATE(),status =1,discount="+discount+",totalPrice="+totalPrice+" where id= " + id;
             data=dataProvider.Instance.ExcuteNonQuery(query);
             return data > 0;
         }
@@ -67,6 +67,11 @@ namespace QuanLiQuanAn.DAO
             string query = "USP_mergetable  @idTable1 , @idTable2 ";
             data = dataProvider.Instance.ExcuteNonQuery(query, new object[] { idtable1, idtable2 });
             return data > 0;
+        }
+        public DataTable getListFromDate(DateTime checkin, DateTime checkout)
+        {
+            string query = "USP_GetListBill @datecheckin , @datecheckout ";
+            return dataProvider.Instance.ExcuteQuery(query,new object[]{ checkin,checkout });
         }
     }
 }

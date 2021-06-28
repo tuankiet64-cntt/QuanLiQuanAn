@@ -372,3 +372,18 @@ BEGIN
     WHERE id = @idTable2
 END
 GO
+alter table bill
+add totalPrice float 
+go
+
+create  proc USP_GetListBill
+@datecheckin date , @datecheckout date
+as
+begin	 
+	select tb.name as N'Tên bàn',b.datacheckin as N'Ngày tạo đơn',b.datecheckout as N'Ngày chốt đơn', b.totalPrice as N'Tổng tiền',b.discount as N'Giảm Giá'
+	from bill b inner join TableFood tb  on b.idtable=tb.id  
+	where  datacheckin >= @datecheckin and datecheckout <= @datecheckout and b.status=1
+end
+go
+
+select * from bill
