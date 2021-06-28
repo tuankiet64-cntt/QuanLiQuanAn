@@ -39,6 +39,7 @@ namespace QuanLiQuanAn
         {
             FInfo fi = new FInfo(loginAccount);
             fi.ShowDialog();
+            this.LoginAccount = AccountDAO.Instance.GetAccountByUserName(loginAccount.UserNanme);
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -51,7 +52,7 @@ namespace QuanLiQuanAn
         void ChangePosition(int type)
         {
             AdminToolMenuStrip.Enabled = type == 1 ? true : false;
-            infoToolScrpit.Text += "( "+ loginAccount.DisplayName + " )";
+            infoToolScrpit.Text = "Thông tin tài khoản" + " ( "+ loginAccount.DisplayName + " )";
         }
         void loadCategory()
         {
