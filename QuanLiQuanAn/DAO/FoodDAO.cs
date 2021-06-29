@@ -43,5 +43,12 @@ namespace QuanLiQuanAn.DAO
             return food;
 
         }
+        public bool insertFood(string name,int idCategory,float price)
+        {
+            int data = 0;
+            string query =string.Format("insert into Food(name,idCategory,price) values (N'{0}',{1},{2})",name,idCategory,price);
+            data = dataProvider.Instance.ExcuteNonQuery(query);
+            return data > 0;            
+        }
     }
 }

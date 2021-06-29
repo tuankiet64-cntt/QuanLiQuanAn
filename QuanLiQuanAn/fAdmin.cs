@@ -75,14 +75,16 @@ namespace QuanLiQuanAn
         }
         void showInfoFood()
         {
+            //clear databinding vì khi refresh đã ta sorce đã thay đổi nên binding lại
             txtIDFood.DataBindings.Clear();
             txtNameFood.DataBindings.Clear();
             txtFoodPrice.DataBindings.Clear();
-            txtIDFood.DataBindings.Add("text", dtgvFood.DataSource, "ID");
-            txtNameFood.DataBindings.Add("text", dtgvFood.DataSource, "Tên Món");
-            txtFoodPrice.DataBindings.Add("text", dtgvFood.DataSource, "Giá tiền");
+            // DataBinding đang 2 chiều set thêm option cuối để chỉ đi 1 chiều option là convert type
+            txtIDFood.DataBindings.Add("text", dtgvFood.DataSource, "ID",true,DataSourceUpdateMode.Never);
+            txtNameFood.DataBindings.Add("text", dtgvFood.DataSource, "Tên Món", true, DataSourceUpdateMode.Never);
+            txtFoodPrice.DataBindings.Add("text", dtgvFood.DataSource, "Giá tiền", true, DataSourceUpdateMode.Never);
         }
-
+        private int idCategory;
         private void txtIDFood_TextChanged(object sender, EventArgs e)
         {
             int index = 0;
@@ -98,10 +100,27 @@ namespace QuanLiQuanAn
                 if (category.Id == data.Id)
                 {
                     index = i;
+                    idCategory = category.Id;
                 }
                 i++;
             }
             cbCategory.SelectedIndex = index;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string name = txtNameFood.Text;
+            float price = float.Parse(txtFoodPrice.Text.ToString());
+            int id = this.idCategory;
+            if (FoodDAO.Instance.insertFood(name, id, price))
+            {
+                MessageBox.Show("Update Thành công");
+            }
+            else
+            {
+                MessageBox.Show("Kiểm tra lại thông tin");
+            }
+            btnLoadFood.PerformClick();
         }
     }
 }
