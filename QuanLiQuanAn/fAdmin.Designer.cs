@@ -415,6 +415,7 @@ namespace QuanLiQuanAn
             // 
             // cbCategory
             // 
+            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(161, 23);
             this.cbCategory.Name = "cbCategory";

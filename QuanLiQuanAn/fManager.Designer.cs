@@ -96,14 +96,14 @@ namespace QuanLiQuanAn
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(210, 26);
             this.toolStripMenuItem5.Text = "Thông tin cá nhân";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(210, 26);
             this.toolStripMenuItem6.Text = "Đăng xuất";
             this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
             // 
@@ -190,6 +190,7 @@ namespace QuanLiQuanAn
             // 
             // cbMergeTable
             // 
+            this.cbMergeTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMergeTable.FormattingEnabled = true;
             this.cbMergeTable.Location = new System.Drawing.Point(0, 25);
             this.cbMergeTable.Name = "cbMergeTable";
@@ -219,6 +220,7 @@ namespace QuanLiQuanAn
             // 
             // cbSwitchTable
             // 
+            this.cbSwitchTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSwitchTable.FormattingEnabled = true;
             this.cbSwitchTable.Location = new System.Drawing.Point(0, 61);
             this.cbSwitchTable.Name = "cbSwitchTable";
@@ -292,6 +294,7 @@ namespace QuanLiQuanAn
             // 
             // cbFood
             // 
+            this.cbFood.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFood.FormattingEnabled = true;
             this.cbFood.Location = new System.Drawing.Point(15, 51);
             this.cbFood.Name = "cbFood";
@@ -300,6 +303,7 @@ namespace QuanLiQuanAn
             // 
             // cbCate
             // 
+            this.cbCate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCate.FormattingEnabled = true;
             this.cbCate.Location = new System.Drawing.Point(15, 17);
             this.cbCate.Name = "cbCate";
