@@ -133,6 +133,11 @@ namespace QuanLiQuanAn
         private void btnadd_Click(object sender, EventArgs e)
         {
             table table = lstBill.Tag as table;
+            if(table == null)
+            {
+                MessageBox.Show("Vui lòng chọn bàn !","Thông báo");
+                return;
+            }
             int idBill = BillDAO.Instance.getBillidByTableId(table.Id);
             int idFood = (cbFood.SelectedItem as Food).Id;
             int count =(int)numudFood.Value;
