@@ -57,5 +57,13 @@ namespace QuanLiQuanAn.DAO
             data = dataProvider.Instance.ExcuteNonQuery(query);
             return data > 0;
         }
+        public bool DeleteFood(int idFood)
+        {
+            int data = 0;
+            string query = string.Format("delete from food where id={0}", idFood);
+            data = dataProvider.Instance.ExcuteNonQuery(query);
+            return data > 0;
+        }
+
     }
 }

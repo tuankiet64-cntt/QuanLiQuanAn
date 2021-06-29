@@ -32,5 +32,12 @@ namespace QuanLiQuanAn.DAO
             return data > 0;
         }
 
+        public bool DeleteBillInfo(int idfood)
+        {
+            int data = 0;
+            string query = string.Format("delete from billInfo where idFood={0}",idfood);
+            data = dataProvider.Instance.ExcuteNonQuery(query);
+            return data > 0;
+        }
     }
 }

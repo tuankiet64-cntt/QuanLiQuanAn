@@ -137,5 +137,23 @@ namespace QuanLiQuanAn
             }
             btnLoadFood.PerformClick();
         }
+
+        private void btnDeleteFood_Click(object sender, EventArgs e)
+        {
+            int idFood = Convert.ToInt32(txtIDFood.Text);
+            BillInfoDAO.Instance.DeleteBillInfo(idFood);
+            if (MessageBox.Show(string.Format("Bạn có thật sự muốn xóa món: {0} \nĐiều này sẽ khiến món ăn này ở tất cả bill bị xóa ! ", txtNameFood.Text), "Thông báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                if (FoodDAO.Instance.DeleteFood(idFood))
+                {
+                    MessageBox.Show("Xóa thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Kiểm tra lại thông tin");
+                }
+            }
+            btnLoadFood.PerformClick();
+        }
     }
 }

@@ -408,3 +408,22 @@ begin
 	end
 end
 go
+
+create trigger UTG_DeleteBillInfo
+on billInfo for delete
+as
+begin
+		declare @idbll int
+		declare @idbillInfo int
+		declare @count int
+		declare @idTable int
+		select @idbll = idbill,@idbillInfo=deleted.id from deleted
+		select @idTable=idtable from bill where id=@idbll;
+		select @count=Count(*) from billInfo bi,bill b where b.id=bi.idbill  and bi.idbill=@idbll  and b.status=0
+		if(@count=0)
+		update TableFood set status= N'Trống' where id=@idTable
+end
+
+alter table bill
+add default 0 for totalPrice
+
