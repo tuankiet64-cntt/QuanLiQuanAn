@@ -50,5 +50,12 @@ namespace QuanLiQuanAn.DAO
             data = dataProvider.Instance.ExcuteNonQuery(query);
             return data > 0;            
         }
+        public bool UpdateFood(string name, int idCategory, float price,int id)
+        {
+            int data = 0;
+            string query = string.Format("Update Food set name=N'{0}',idCategory={1},price={2} where id={3}", name, idCategory, price,id);
+            data = dataProvider.Instance.ExcuteNonQuery(query);
+            return data > 0;
+        }
     }
 }

@@ -345,6 +345,7 @@ namespace QuanLiQuanAn
             this.btnUpdateFood.TabIndex = 2;
             this.btnUpdateFood.Text = "Sửa";
             this.btnUpdateFood.UseVisualStyleBackColor = true;
+            this.btnUpdateFood.Click += new System.EventHandler(this.btnUpdateFood_Click);
             // 
             // btnDeleteFood
             // 

@@ -84,7 +84,6 @@ namespace QuanLiQuanAn
             txtNameFood.DataBindings.Add("text", dtgvFood.DataSource, "Tên Món", true, DataSourceUpdateMode.Never);
             txtFoodPrice.DataBindings.Add("text", dtgvFood.DataSource, "Giá tiền", true, DataSourceUpdateMode.Never);
         }
-        private int idCategory;
         private void txtIDFood_TextChanged(object sender, EventArgs e)
         {
             int index = 0;
@@ -100,7 +99,6 @@ namespace QuanLiQuanAn
                 if (category.Id == data.Id)
                 {
                     index = i;
-                    idCategory = category.Id;
                 }
                 i++;
             }
@@ -111,8 +109,25 @@ namespace QuanLiQuanAn
         {
             string name = txtNameFood.Text;
             float price = float.Parse(txtFoodPrice.Text.ToString());
-            int id = this.idCategory;
-            if (FoodDAO.Instance.insertFood(name, id, price))
+            int idCategory = (cbCategory.SelectedItem as Category).Id;
+            if (FoodDAO.Instance.insertFood(name, idCategory, price))
+            {
+                MessageBox.Show("Update Thành công");
+            }
+            else
+            {
+                MessageBox.Show("Kiểm tra lại thông tin");
+            }
+            btnLoadFood.PerformClick();
+        }
+
+        private void btnUpdateFood_Click(object sender, EventArgs e)
+        {
+            int idFood = Convert.ToInt32(txtIDFood.Text);
+            string name = txtNameFood.Text;
+            float price = float.Parse(txtFoodPrice.Text.ToString());
+            int idCategory = (cbCategory.SelectedItem as Category).Id;
+            if (FoodDAO.Instance.UpdateFood(name, idCategory, price,idFood))
             {
                 MessageBox.Show("Update Thành công");
             }
