@@ -24,5 +24,24 @@ namespace QuanLiQuanAn.DAO
             }
             return listFood;
         }
+        public DataTable GetAllListFood()
+        {
+            string query = "select f.id as ID,f.name as N'Tên món',fc.name as 'Tên Danh Mục',f.price as 'Giá tiền' from food as f join foodCategory as fc on f.idCategory=fc.id  ";
+            DataTable data = dataProvider.Instance.ExcuteQuery(query);
+            return data;
+        }
+        public Food GetFoodbyID(int id)
+        {
+            Food food = null;
+            string query = "select * from food where id="+id;
+            DataTable data = dataProvider.Instance.ExcuteQuery(query);
+            foreach(DataRow row in data.Rows)
+            {
+                 food = new Food(row);
+                return food;
+            }
+            return food;
+
+        }
     }
 }

@@ -32,6 +32,8 @@ namespace QuanLiQuanAn
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.dtgvTotal = new System.Windows.Forms.DataGridView();
             this.panel9 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
@@ -50,16 +52,16 @@ namespace QuanLiQuanAn
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtFoodPrice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNameFood = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtIDFood = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -116,8 +118,6 @@ namespace QuanLiQuanAn
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtTotal = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -194,6 +194,24 @@ namespace QuanLiQuanAn
             this.panel10.Size = new System.Drawing.Size(1009, 499);
             this.panel10.TabIndex = 2;
             // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(860, 464);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(135, 27);
+            this.txtTotal.TabIndex = 2;
+            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(774, 467);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(80, 20);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Tổng cộng";
+            // 
             // dtgvTotal
             // 
             this.dtgvTotal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -263,11 +281,13 @@ namespace QuanLiQuanAn
             // 
             // dtgvFood
             // 
+            this.dtgvFood.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvFood.Location = new System.Drawing.Point(7, 3);
             this.dtgvFood.Name = "dtgvFood";
             this.dtgvFood.RowHeadersWidth = 51;
             this.dtgvFood.RowTemplate.Height = 29;
+            this.dtgvFood.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvFood.Size = new System.Drawing.Size(498, 472);
             this.dtgvFood.TabIndex = 0;
             // 
@@ -315,6 +335,7 @@ namespace QuanLiQuanAn
             this.button4.TabIndex = 3;
             this.button4.Text = "Xem";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -356,19 +377,19 @@ namespace QuanLiQuanAn
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.textBox4);
+            this.panel8.Controls.Add(this.txtFoodPrice);
             this.panel8.Controls.Add(this.label4);
             this.panel8.Location = new System.Drawing.Point(13, 303);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(476, 79);
             this.panel8.TabIndex = 6;
             // 
-            // textBox4
+            // txtFoodPrice
             // 
-            this.textBox4.Location = new System.Drawing.Point(161, 27);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(297, 27);
-            this.textBox4.TabIndex = 3;
+            this.txtFoodPrice.Location = new System.Drawing.Point(161, 27);
+            this.txtFoodPrice.Name = "txtFoodPrice";
+            this.txtFoodPrice.Size = new System.Drawing.Size(297, 27);
+            this.txtFoodPrice.TabIndex = 3;
             // 
             // label4
             // 
@@ -382,20 +403,20 @@ namespace QuanLiQuanAn
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.comboBox1);
+            this.panel7.Controls.Add(this.cbCategory);
             this.panel7.Controls.Add(this.label3);
             this.panel7.Location = new System.Drawing.Point(13, 207);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(476, 79);
             this.panel7.TabIndex = 5;
             // 
-            // comboBox1
+            // cbCategory
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(161, 23);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(297, 28);
-            this.comboBox1.TabIndex = 1;
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(161, 23);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(297, 28);
+            this.cbCategory.TabIndex = 1;
             // 
             // label3
             // 
@@ -409,19 +430,19 @@ namespace QuanLiQuanAn
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.textBox3);
+            this.panel6.Controls.Add(this.txtNameFood);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Location = new System.Drawing.Point(13, 114);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(476, 79);
             this.panel6.TabIndex = 4;
             // 
-            // textBox3
+            // txtNameFood
             // 
-            this.textBox3.Location = new System.Drawing.Point(161, 27);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(297, 27);
-            this.textBox3.TabIndex = 3;
+            this.txtNameFood.Location = new System.Drawing.Point(161, 27);
+            this.txtNameFood.Name = "txtNameFood";
+            this.txtNameFood.Size = new System.Drawing.Size(297, 27);
+            this.txtNameFood.TabIndex = 3;
             // 
             // label2
             // 
@@ -435,20 +456,21 @@ namespace QuanLiQuanAn
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.textBox2);
+            this.panel5.Controls.Add(this.txtIDFood);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Location = new System.Drawing.Point(13, 18);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(476, 79);
             this.panel5.TabIndex = 0;
             // 
-            // textBox2
+            // txtIDFood
             // 
-            this.textBox2.Location = new System.Drawing.Point(161, 27);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(297, 27);
-            this.textBox2.TabIndex = 3;
+            this.txtIDFood.Location = new System.Drawing.Point(161, 27);
+            this.txtIDFood.Name = "txtIDFood";
+            this.txtIDFood.ReadOnly = true;
+            this.txtIDFood.Size = new System.Drawing.Size(297, 27);
+            this.txtIDFood.TabIndex = 3;
+            this.txtIDFood.TextChanged += new System.EventHandler(this.txtIDFood_TextChanged);
             // 
             // label1
             // 
@@ -968,24 +990,6 @@ namespace QuanLiQuanAn
             this.button18.Text = "Thêm";
             this.button18.UseVisualStyleBackColor = true;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(774, 467);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(80, 20);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Tổng cộng";
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Location = new System.Drawing.Point(860, 464);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(135, 27);
-            this.txtTotal.TabIndex = 2;
-            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1076,16 +1080,16 @@ namespace QuanLiQuanAn
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtFoodPrice;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNameFood;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtIDFood;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
