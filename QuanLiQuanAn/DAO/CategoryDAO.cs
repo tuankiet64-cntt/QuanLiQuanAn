@@ -24,6 +24,27 @@ namespace QuanLiQuanAn.DAO
             }
             return listCategory;    
         }
-      
+        public bool insertFood(string name)
+        {
+            int data = 0;
+            string query = string.Format("insert into FoodCategory(name) values (N'{0}')", name);
+            data = dataProvider.Instance.ExcuteNonQuery(query);
+            return data > 0;
+        }
+        public bool UpdateFood(string name, int idCategory)
+        {
+            int data = 0;
+            string query = string.Format("Update FoodCategory set name=N'{0}'where id={1}", name, idCategory);
+            data = dataProvider.Instance.ExcuteNonQuery(query);
+            return data > 0;
+        }
+        public bool DeleteFood(int idCategory)
+        {
+            int data = 0;
+            string query = string.Format("delete from FoodCategory where id={0}", idCategory);
+            data = dataProvider.Instance.ExcuteNonQuery(query);
+            return data > 0;
+        }
+
     }
 }

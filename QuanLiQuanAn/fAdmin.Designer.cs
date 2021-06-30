@@ -66,18 +66,18 @@ namespace QuanLiQuanAn
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtCategoryName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtCategoryID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dtgvCategory = new System.Windows.Forms.DataGridView();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btnReadCate = new System.Windows.Forms.Button();
+            this.btnUpdateCate = new System.Windows.Forms.Button();
+            this.btnDeleteCate = new System.Windows.Forms.Button();
+            this.btnInsertCate = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
@@ -138,7 +138,7 @@ namespace QuanLiQuanAn
             this.panel16.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCategory)).BeginInit();
             this.panel11.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -509,46 +509,46 @@ namespace QuanLiQuanAn
             // 
             // panel16
             // 
-            this.panel16.Controls.Add(this.textBox6);
+            this.panel16.Controls.Add(this.txtCategoryName);
             this.panel16.Controls.Add(this.label7);
             this.panel16.Location = new System.Drawing.Point(13, 114);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(476, 79);
             this.panel16.TabIndex = 4;
             // 
-            // textBox6
+            // txtCategoryName
             // 
-            this.textBox6.Location = new System.Drawing.Point(161, 27);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(297, 27);
-            this.textBox6.TabIndex = 3;
+            this.txtCategoryName.Location = new System.Drawing.Point(161, 27);
+            this.txtCategoryName.Name = "txtCategoryName";
+            this.txtCategoryName.Size = new System.Drawing.Size(297, 27);
+            this.txtCategoryName.TabIndex = 3;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(15, 27);
+            this.label7.Location = new System.Drawing.Point(3, 27);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(106, 24);
+            this.label7.Size = new System.Drawing.Size(158, 24);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Tên món :";
+            this.label7.Text = "Tên danh mục :";
             // 
             // panel17
             // 
-            this.panel17.Controls.Add(this.textBox7);
+            this.panel17.Controls.Add(this.txtCategoryID);
             this.panel17.Controls.Add(this.label8);
             this.panel17.Location = new System.Drawing.Point(13, 18);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(476, 79);
             this.panel17.TabIndex = 0;
             // 
-            // textBox7
+            // txtCategoryID
             // 
-            this.textBox7.Location = new System.Drawing.Point(161, 27);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(297, 27);
-            this.textBox7.TabIndex = 3;
+            this.txtCategoryID.Location = new System.Drawing.Point(161, 27);
+            this.txtCategoryID.Name = "txtCategoryID";
+            this.txtCategoryID.ReadOnly = true;
+            this.txtCategoryID.Size = new System.Drawing.Size(297, 27);
+            this.txtCategoryID.TabIndex = 3;
             // 
             // label8
             // 
@@ -562,68 +562,74 @@ namespace QuanLiQuanAn
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.dataGridView3);
+            this.panel12.Controls.Add(this.dtgvCategory);
             this.panel12.Location = new System.Drawing.Point(16, 122);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(504, 473);
             this.panel12.TabIndex = 7;
             // 
-            // dataGridView3
+            // dtgvCategory
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 0);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 29;
-            this.dataGridView3.Size = new System.Drawing.Size(498, 472);
-            this.dataGridView3.TabIndex = 1;
+            this.dtgvCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvCategory.Location = new System.Drawing.Point(3, 0);
+            this.dtgvCategory.Name = "dtgvCategory";
+            this.dtgvCategory.RowHeadersWidth = 51;
+            this.dtgvCategory.RowTemplate.Height = 29;
+            this.dtgvCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvCategory.Size = new System.Drawing.Size(498, 472);
+            this.dtgvCategory.TabIndex = 1;
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.button7);
-            this.panel11.Controls.Add(this.button8);
-            this.panel11.Controls.Add(this.button9);
-            this.panel11.Controls.Add(this.button10);
+            this.panel11.Controls.Add(this.btnReadCate);
+            this.panel11.Controls.Add(this.btnUpdateCate);
+            this.panel11.Controls.Add(this.btnDeleteCate);
+            this.panel11.Controls.Add(this.btnInsertCate);
             this.panel11.Location = new System.Drawing.Point(16, 14);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(504, 101);
             this.panel11.TabIndex = 6;
             // 
-            // button7
+            // btnReadCate
             // 
-            this.button7.Location = new System.Drawing.Point(377, 14);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(115, 71);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "Xem";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnReadCate.Location = new System.Drawing.Point(377, 14);
+            this.btnReadCate.Name = "btnReadCate";
+            this.btnReadCate.Size = new System.Drawing.Size(115, 71);
+            this.btnReadCate.TabIndex = 3;
+            this.btnReadCate.Text = "Xem";
+            this.btnReadCate.UseVisualStyleBackColor = true;
+            this.btnReadCate.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button8
+            // btnUpdateCate
             // 
-            this.button8.Location = new System.Drawing.Point(256, 14);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(115, 71);
-            this.button8.TabIndex = 2;
-            this.button8.Text = "Sửa";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnUpdateCate.Location = new System.Drawing.Point(256, 14);
+            this.btnUpdateCate.Name = "btnUpdateCate";
+            this.btnUpdateCate.Size = new System.Drawing.Size(115, 71);
+            this.btnUpdateCate.TabIndex = 2;
+            this.btnUpdateCate.Text = "Sửa";
+            this.btnUpdateCate.UseVisualStyleBackColor = true;
+            this.btnUpdateCate.Click += new System.EventHandler(this.btnUpdateCate_Click);
             // 
-            // button9
+            // btnDeleteCate
             // 
-            this.button9.Location = new System.Drawing.Point(135, 14);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(115, 71);
-            this.button9.TabIndex = 1;
-            this.button9.Text = "Xóa";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnDeleteCate.Location = new System.Drawing.Point(135, 14);
+            this.btnDeleteCate.Name = "btnDeleteCate";
+            this.btnDeleteCate.Size = new System.Drawing.Size(115, 71);
+            this.btnDeleteCate.TabIndex = 1;
+            this.btnDeleteCate.Text = "Xóa";
+            this.btnDeleteCate.UseVisualStyleBackColor = true;
+            this.btnDeleteCate.Click += new System.EventHandler(this.btnDeleteCate_Click);
             // 
-            // button10
+            // btnInsertCate
             // 
-            this.button10.Location = new System.Drawing.Point(14, 14);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(115, 71);
-            this.button10.TabIndex = 0;
-            this.button10.Text = "Thêm";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnInsertCate.Location = new System.Drawing.Point(14, 14);
+            this.btnInsertCate.Name = "btnInsertCate";
+            this.btnInsertCate.Size = new System.Drawing.Size(115, 71);
+            this.btnInsertCate.TabIndex = 0;
+            this.btnInsertCate.Text = "Thêm";
+            this.btnInsertCate.UseVisualStyleBackColor = true;
+            this.btnInsertCate.Click += new System.EventHandler(this.button10_Click);
             // 
             // tabPage4
             // 
@@ -1031,7 +1037,7 @@ namespace QuanLiQuanAn
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
             this.panel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCategory)).EndInit();
             this.panel11.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
@@ -1100,18 +1106,18 @@ namespace QuanLiQuanAn
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtCategoryID;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dtgvCategory;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnReadCate;
+        private System.Windows.Forms.Button btnUpdateCate;
+        private System.Windows.Forms.Button btnDeleteCate;
+        private System.Windows.Forms.Button btnInsertCate;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.TextBox textBox9;

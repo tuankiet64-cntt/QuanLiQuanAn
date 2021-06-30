@@ -23,10 +23,7 @@ namespace QuanLiQuanAn
         public fManager(Account account)
         {
             InitializeComponent();
-            tableLoad();
-            loadCategory();
-            comboboxDataSource(cbSwitchTable);
-            comboboxDataSource(cbMergeTable);
+            load();
             this.LoginAccount = account;
         }
         #region event
@@ -34,7 +31,13 @@ namespace QuanLiQuanAn
         {
             this.Hide();
         }
-
+        private void load()
+        {
+            tableLoad();
+            loadCategory();
+            comboboxDataSource(cbSwitchTable);
+            comboboxDataSource(cbMergeTable);
+        }
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
             FInfo fi = new FInfo(loginAccount);
@@ -46,6 +49,7 @@ namespace QuanLiQuanAn
         {
             fAdmin fAdmin = new fAdmin();
             fAdmin.ShowDialog();
+            load();
         }
         #endregion
         #region Method
@@ -159,6 +163,11 @@ namespace QuanLiQuanAn
         private void btnpay_Click(object sender, EventArgs e)
         {
             table table = lstBill.Tag as table; 
+            if(table == null)
+            {
+                MessageBox.Show("Vui lòng chọn bàn");
+                return;
+            }
             int idBill = BillDAO.Instance.getBillidByTableId(table.Id);
             int discount = (int)numudDiscount.Value > 0 ? (int)numudDiscount.Value : 0;
             float totalPrice = float.Parse(txtTotalPrice.Text.Split(',')[0]);
