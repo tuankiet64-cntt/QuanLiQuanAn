@@ -30,7 +30,7 @@ CREATE TABLE Food (
   idCategory int NOT NULL,
   price float NOT NULL DEFAULT 0,
   FOREIGN KEY (idCategory)
-  REFERENCES FoodCategory (id)
+  REFERENCES FoodCategory (id)  ON DELETE CASCADE 
 )
 CREATE TABLE bill (
   id int IDENTITY PRIMARY KEY NOT NULL,
@@ -38,15 +38,15 @@ CREATE TABLE bill (
   datecheckout date,
   idtable int NOT NULL,
   status int NOT NULL DEFAULT 0, -- 1 là đã thanh toan 0 là chưa thanh toán
-  FOREIGN KEY (idtable) REFERENCES TableFood (id)
+  FOREIGN KEY (idtable) REFERENCES TableFood (id)  ON DELETE CASCADE 
 )
 CREATE TABLE billInfo (
   id int IDENTITY PRIMARY KEY NOT NULL,
   idbill int NOT NULL,
   idFood int NOT NULL,
   count int NOT NULL DEFAULT 1,
-  FOREIGN KEY (idbill) REFERENCES bill (id),
-  FOREIGN KEY (idFood) REFERENCES Food (id)
+  FOREIGN KEY (idbill) REFERENCES bill (id) ON DELETE CASCADE ,
+  FOREIGN KEY (idFood) REFERENCES Food (id) ON DELETE CASCADE 
 )
 
 -- add default 
@@ -426,4 +426,3 @@ end
 
 alter table bill
 add default 0 for totalPrice
-
