@@ -80,9 +80,6 @@ namespace QuanLiQuanAn
             this.btnInsertCate = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -142,7 +139,6 @@ namespace QuanLiQuanAn
             this.panel11.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel14.SuspendLayout();
-            this.panel21.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel19.SuspendLayout();
@@ -645,39 +641,12 @@ namespace QuanLiQuanAn
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.panel21);
             this.panel14.Controls.Add(this.panel15);
             this.panel14.Controls.Add(this.panel18);
             this.panel14.Location = new System.Drawing.Point(519, 118);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(492, 475);
             this.panel14.TabIndex = 11;
-            // 
-            // panel21
-            // 
-            this.panel21.Controls.Add(this.textBox9);
-            this.panel21.Controls.Add(this.label9);
-            this.panel21.Location = new System.Drawing.Point(13, 212);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(476, 79);
-            this.panel21.TabIndex = 5;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(161, 27);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(297, 27);
-            this.textBox9.TabIndex = 3;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(15, 27);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(119, 24);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Trạng thái :";
             // 
             // panel15
             // 
@@ -1041,8 +1010,6 @@ namespace QuanLiQuanAn
             this.panel11.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
-            this.panel21.ResumeLayout(false);
-            this.panel21.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
             this.panel18.ResumeLayout(false);
@@ -1119,9 +1086,6 @@ namespace QuanLiQuanAn
         private System.Windows.Forms.Button btnDeleteCate;
         private System.Windows.Forms.Button btnInsertCate;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label5;
