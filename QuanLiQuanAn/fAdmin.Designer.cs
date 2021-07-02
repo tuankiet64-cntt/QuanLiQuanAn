@@ -95,26 +95,23 @@ namespace QuanLiQuanAn
             this.button14 = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.button19 = new System.Windows.Forms.Button();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.btnResetPass = new System.Windows.Forms.Button();
             this.panel23 = new System.Windows.Forms.Panel();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.nbudAccount = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtDisplayName = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel25 = new System.Windows.Forms.Panel();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.panel26 = new System.Windows.Forms.Panel();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
             this.panel27 = new System.Windows.Forms.Panel();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
+            this.btnReadAccount = new System.Windows.Forms.Button();
+            this.btnUpdateAccount = new System.Windows.Forms.Button();
+            this.btnRemoveAccount = new System.Windows.Forms.Button();
+            this.btnAddAccount = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -146,8 +143,8 @@ namespace QuanLiQuanAn
             this.panel20.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel22.SuspendLayout();
-            this.panel28.SuspendLayout();
             this.panel23.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbudAccount)).BeginInit();
             this.panel24.SuspendLayout();
             this.panel25.SuspendLayout();
             this.panel26.SuspendLayout();
@@ -780,8 +777,7 @@ namespace QuanLiQuanAn
             // 
             // panel22
             // 
-            this.panel22.Controls.Add(this.button19);
-            this.panel22.Controls.Add(this.panel28);
+            this.panel22.Controls.Add(this.btnResetPass);
             this.panel22.Controls.Add(this.panel23);
             this.panel22.Controls.Add(this.panel24);
             this.panel22.Controls.Add(this.panel25);
@@ -790,56 +786,35 @@ namespace QuanLiQuanAn
             this.panel22.Size = new System.Drawing.Size(492, 475);
             this.panel22.TabIndex = 14;
             // 
-            // button19
+            // btnResetPass
             // 
-            this.button19.Location = new System.Drawing.Point(356, 393);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(115, 71);
-            this.button19.TabIndex = 7;
-            this.button19.Text = "Đặt lại mật khẩu";
-            this.button19.UseVisualStyleBackColor = true;
-            // 
-            // panel28
-            // 
-            this.panel28.Controls.Add(this.textBox13);
-            this.panel28.Controls.Add(this.label13);
-            this.panel28.Location = new System.Drawing.Point(13, 308);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(476, 79);
-            this.panel28.TabIndex = 6;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(161, 27);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(297, 27);
-            this.textBox13.TabIndex = 3;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(15, 27);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(119, 24);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Trạng thái :";
+            this.btnResetPass.Location = new System.Drawing.Point(356, 393);
+            this.btnResetPass.Name = "btnResetPass";
+            this.btnResetPass.Size = new System.Drawing.Size(115, 71);
+            this.btnResetPass.TabIndex = 7;
+            this.btnResetPass.Text = "Đặt lại mật khẩu";
+            this.btnResetPass.UseVisualStyleBackColor = true;
             // 
             // panel23
             // 
-            this.panel23.Controls.Add(this.textBox10);
+            this.panel23.Controls.Add(this.nbudAccount);
             this.panel23.Controls.Add(this.label10);
             this.panel23.Location = new System.Drawing.Point(13, 212);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(476, 79);
             this.panel23.TabIndex = 5;
             // 
-            // textBox10
+            // nbudAccount
             // 
-            this.textBox10.Location = new System.Drawing.Point(161, 27);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(297, 27);
-            this.textBox10.TabIndex = 3;
+            this.nbudAccount.Location = new System.Drawing.Point(165, 27);
+            this.nbudAccount.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nbudAccount.Name = "nbudAccount";
+            this.nbudAccount.Size = new System.Drawing.Size(293, 27);
+            this.nbudAccount.TabIndex = 1;
             // 
             // label10
             // 
@@ -853,19 +828,19 @@ namespace QuanLiQuanAn
             // 
             // panel24
             // 
-            this.panel24.Controls.Add(this.textBox11);
+            this.panel24.Controls.Add(this.txtDisplayName);
             this.panel24.Controls.Add(this.label11);
             this.panel24.Location = new System.Drawing.Point(13, 114);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(476, 79);
             this.panel24.TabIndex = 4;
             // 
-            // textBox11
+            // txtDisplayName
             // 
-            this.textBox11.Location = new System.Drawing.Point(161, 27);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(297, 27);
-            this.textBox11.TabIndex = 3;
+            this.txtDisplayName.Location = new System.Drawing.Point(161, 27);
+            this.txtDisplayName.Name = "txtDisplayName";
+            this.txtDisplayName.Size = new System.Drawing.Size(297, 27);
+            this.txtDisplayName.TabIndex = 3;
             // 
             // label11
             // 
@@ -879,20 +854,19 @@ namespace QuanLiQuanAn
             // 
             // panel25
             // 
-            this.panel25.Controls.Add(this.textBox12);
+            this.panel25.Controls.Add(this.txtUserName);
             this.panel25.Controls.Add(this.label12);
             this.panel25.Location = new System.Drawing.Point(13, 18);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(476, 79);
             this.panel25.TabIndex = 0;
             // 
-            // textBox12
+            // txtUserName
             // 
-            this.textBox12.Location = new System.Drawing.Point(161, 27);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(297, 27);
-            this.textBox12.TabIndex = 3;
+            this.txtUserName.Location = new System.Drawing.Point(161, 27);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(297, 27);
+            this.txtUserName.TabIndex = 3;
             // 
             // label12
             // 
@@ -924,50 +898,54 @@ namespace QuanLiQuanAn
             // 
             // panel27
             // 
-            this.panel27.Controls.Add(this.button15);
-            this.panel27.Controls.Add(this.button16);
-            this.panel27.Controls.Add(this.button17);
-            this.panel27.Controls.Add(this.button18);
+            this.panel27.Controls.Add(this.btnReadAccount);
+            this.panel27.Controls.Add(this.btnUpdateAccount);
+            this.panel27.Controls.Add(this.btnRemoveAccount);
+            this.panel27.Controls.Add(this.btnAddAccount);
             this.panel27.Location = new System.Drawing.Point(9, 10);
             this.panel27.Name = "panel27";
             this.panel27.Size = new System.Drawing.Size(504, 101);
             this.panel27.TabIndex = 12;
             // 
-            // button15
+            // btnReadAccount
             // 
-            this.button15.Location = new System.Drawing.Point(377, 14);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(115, 71);
-            this.button15.TabIndex = 3;
-            this.button15.Text = "Xem";
-            this.button15.UseVisualStyleBackColor = true;
+            this.btnReadAccount.Location = new System.Drawing.Point(377, 14);
+            this.btnReadAccount.Name = "btnReadAccount";
+            this.btnReadAccount.Size = new System.Drawing.Size(115, 71);
+            this.btnReadAccount.TabIndex = 3;
+            this.btnReadAccount.Text = "Xem";
+            this.btnReadAccount.UseVisualStyleBackColor = true;
+            this.btnReadAccount.Click += new System.EventHandler(this.btnReadAccount_Click);
             // 
-            // button16
+            // btnUpdateAccount
             // 
-            this.button16.Location = new System.Drawing.Point(256, 14);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(115, 71);
-            this.button16.TabIndex = 2;
-            this.button16.Text = "Sửa";
-            this.button16.UseVisualStyleBackColor = true;
+            this.btnUpdateAccount.Location = new System.Drawing.Point(256, 14);
+            this.btnUpdateAccount.Name = "btnUpdateAccount";
+            this.btnUpdateAccount.Size = new System.Drawing.Size(115, 71);
+            this.btnUpdateAccount.TabIndex = 2;
+            this.btnUpdateAccount.Text = "Sửa";
+            this.btnUpdateAccount.UseVisualStyleBackColor = true;
+            this.btnUpdateAccount.Click += new System.EventHandler(this.btnUpdateAccount_Click);
             // 
-            // button17
+            // btnRemoveAccount
             // 
-            this.button17.Location = new System.Drawing.Point(135, 14);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(115, 71);
-            this.button17.TabIndex = 1;
-            this.button17.Text = "Xóa";
-            this.button17.UseVisualStyleBackColor = true;
+            this.btnRemoveAccount.Location = new System.Drawing.Point(135, 14);
+            this.btnRemoveAccount.Name = "btnRemoveAccount";
+            this.btnRemoveAccount.Size = new System.Drawing.Size(115, 71);
+            this.btnRemoveAccount.TabIndex = 1;
+            this.btnRemoveAccount.Text = "Xóa";
+            this.btnRemoveAccount.UseVisualStyleBackColor = true;
+            this.btnRemoveAccount.Click += new System.EventHandler(this.btnRemoveAccount_Click);
             // 
-            // button18
+            // btnAddAccount
             // 
-            this.button18.Location = new System.Drawing.Point(14, 14);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(115, 71);
-            this.button18.TabIndex = 0;
-            this.button18.Text = "Thêm";
-            this.button18.UseVisualStyleBackColor = true;
+            this.btnAddAccount.Location = new System.Drawing.Point(14, 14);
+            this.btnAddAccount.Name = "btnAddAccount";
+            this.btnAddAccount.Size = new System.Drawing.Size(115, 71);
+            this.btnAddAccount.TabIndex = 0;
+            this.btnAddAccount.Text = "Thêm";
+            this.btnAddAccount.UseVisualStyleBackColor = true;
+            this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
             // 
             // fAdmin
             // 
@@ -1019,10 +997,9 @@ namespace QuanLiQuanAn
             this.panel20.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
-            this.panel28.ResumeLayout(false);
-            this.panel28.PerformLayout();
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbudAccount)).EndInit();
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
             this.panel25.ResumeLayout(false);
@@ -1100,27 +1077,24 @@ namespace QuanLiQuanAn
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Panel panel28;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnResetPass;
         private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel24;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtDisplayName;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel25;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.DataGridView dtgvAccount;
         private System.Windows.Forms.Panel panel27;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button btnReadAccount;
+        private System.Windows.Forms.Button btnUpdateAccount;
+        private System.Windows.Forms.Button btnRemoveAccount;
+        private System.Windows.Forms.Button btnAddAccount;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.NumericUpDown nbudAccount;
     }
 }

@@ -47,7 +47,7 @@ namespace QuanLiQuanAn
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            fAdmin fAdmin = new fAdmin();
+            fAdmin fAdmin = new fAdmin(loginAccount);
             fAdmin.ShowDialog();
             load();
         }

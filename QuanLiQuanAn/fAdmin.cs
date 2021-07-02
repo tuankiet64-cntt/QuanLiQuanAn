@@ -9,8 +9,13 @@ namespace QuanLiQuanAn
 {
     public partial class fAdmin : Form
     {
-        public fAdmin()
+        Account loginAccount;
+
+        public Account LoginAccount { get => loginAccount; set => loginAccount = value; }
+
+        public fAdmin(Account loginAccount)
         {
+            this.LoginAccount = loginAccount;
             InitializeComponent();
             loadAccountList();
             Resetdtpk();
@@ -18,13 +23,14 @@ namespace QuanLiQuanAn
             LoadCategory();
             showInfoFood();
             showInfoCate();
+            showInfoAccount();
             LoadBill(dtpkCheckin.Value, dtpkCheckout.Value);
         }
         #region Method
 
         void loadAccountList()
         {
-            string query = "select displayname as [Tên hiển thị] from Account";
+            string query = "select displayname as [Tên hiển thị],username as [Tên tài khoản],type as [Loại tài khoản] from Account";
             dtgvAccount.DataSource = dataProvider.Instance.ExcuteQuery(query);
         }
         void LoadBill(DateTime checkin, DateTime checkout)
@@ -73,6 +79,15 @@ namespace QuanLiQuanAn
             txtCategoryName.DataBindings.Clear();
             txtCategoryID.DataBindings.Add("text", dtgvCategory.DataSource, "id", true, DataSourceUpdateMode.Never);
             txtCategoryName.DataBindings.Add("text", dtgvCategory.DataSource, "name", true, DataSourceUpdateMode.Never);
+        }
+        void showInfoAccount()
+        {
+            txtUserName.DataBindings.Clear();
+            txtDisplayName.DataBindings.Clear();
+            nbudAccount.DataBindings.Clear();
+            txtUserName.DataBindings.Add("text", dtgvAccount.DataSource, "Tên tài khoản", true, DataSourceUpdateMode.Never);
+            txtDisplayName.DataBindings.Add("text", dtgvAccount.DataSource, "Tên hiển thị", true, DataSourceUpdateMode.Never);
+            nbudAccount.DataBindings.Add("value", dtgvAccount.DataSource, "Loại tài khoản", true, DataSourceUpdateMode.Never);
         }
         private void LoadCategory()
         {
@@ -219,6 +234,84 @@ namespace QuanLiQuanAn
                 }
                 btnReadCate.PerformClick();
             }
+        }
+
+        private void btnAddAccount_Click(object sender, EventArgs e)
+        {
+            string username = txtUserName.Text;
+            string displayname = txtDisplayName.Text;
+            int type = (int)(nbudAccount.Value);
+            try
+            {
+                if (AccountDAO.Instance.insertAccountByAdmin(username, displayname, type))
+                {
+                    MessageBox.Show("Thêm tài khoản thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Thêm tài khoản thất bại");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Thêm tài khoản thất bại \n Vui lòng kiểm tra lại thông tin");
+                throw ex;
+            }
+            btnReadAccount.PerformClick();
+        }
+
+        private void btnReadAccount_Click(object sender, EventArgs e)
+        {
+            loadAccountList();
+            showInfoAccount();
+        }
+
+        private void btnUpdateAccount_Click(object sender, EventArgs e)
+        {
+            string username = txtUserName.Text;
+            string displayname = txtDisplayName.Text;
+            int type = (int)(nbudAccount.Value);
+            try
+            {
+                if (AccountDAO.Instance.UpdateAccountByAdmin(username, displayname, type))
+                {
+                    MessageBox.Show("Cập nhật tài khoản thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật tài khoản thất bại");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Thêm tài khoản thất bại \n Vui lòng kiểm tra lại thông tin");
+                throw ex;
+            }
+            btnReadAccount.PerformClick();
+        }
+
+        private void btnRemoveAccount_Click(object sender, EventArgs e)
+        {
+            string username = txtUserName.Text;
+            string displayname = txtDisplayName.Text;
+            int type = (int)(nbudAccount.Value);
+            try
+            {
+                if (AccountDAO.Instance.DeleteAccountByAdmin(username,loginAccount))
+                {
+                    MessageBox.Show("Cập nhật tài khoản thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật tài khoản thất bại");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Thêm tài khoản thất bại \n Vui lòng kiểm tra lại thông tin");
+                throw ex;
+            }
+            btnReadAccount.PerformClick();
         }
     }
 }
