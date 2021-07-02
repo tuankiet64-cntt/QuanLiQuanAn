@@ -71,7 +71,7 @@ namespace QuanLiQuanAn
             txtIDFood.DataBindings.Add("text", dtgvFood.DataSource, "ID", true, DataSourceUpdateMode.Never);
             txtNameFood.DataBindings.Add("text", dtgvFood.DataSource, "Tên Món", true, DataSourceUpdateMode.Never);
             txtFoodPrice.DataBindings.Add("text", dtgvFood.DataSource, "Giá tiền", true, DataSourceUpdateMode.Never);
-   
+
         }
         void showInfoCate()
         {
@@ -181,7 +181,7 @@ namespace QuanLiQuanAn
             }
             btnLoadFood.PerformClick();
         }
-        #endregion
+
         //Category CRUD
         private void button7_Click(object sender, EventArgs e)
         {
@@ -207,32 +207,48 @@ namespace QuanLiQuanAn
         {
             string nameCategory = txtCategoryName.Text;
             int IdCategory = Convert.ToInt32(txtCategoryID.Text);
-            if (CategoryDAO.Instance.UpdateFood(nameCategory, IdCategory))
+            try
             {
-                MessageBox.Show("Update danh mục thành công");
-            }
-            else
-            {
-                MessageBox.Show("Kiểm tra lại thông tin");
-            }
-            btnReadCate.PerformClick();
-        }
-
-        private void btnDeleteCate_Click(object sender, EventArgs e)
-        {
-            string nameCategory = txtCategoryName.Text;
-            int IdCategory = Convert.ToInt32(txtCategoryID.Text);
-            if (MessageBox.Show(string.Format("Bạn có thật sự muốn xóa Danh Mục: {0} \nĐiều này sẽ khiến món ăn này ở tất cả bill bị xóa ! ", nameCategory), "Thông báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-            {
-                if (CategoryDAO.Instance.DeleteFood(IdCategory))
+                if (CategoryDAO.Instance.UpdateFood(nameCategory, IdCategory))
                 {
-                    MessageBox.Show("Xóa danh mục thành công");
+                    MessageBox.Show("Update danh mục thành công");
                 }
                 else
                 {
                     MessageBox.Show("Kiểm tra lại thông tin");
                 }
                 btnReadCate.PerformClick();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kiểm tra lại thông tin");
+            }
+
+        }
+
+        private void btnDeleteCate_Click(object sender, EventArgs e)
+        {
+            string nameCategory = txtCategoryName.Text;
+            int IdCategory = Convert.ToInt32(txtCategoryID.Text);
+            try
+            {
+                if (MessageBox.Show(string.Format("Bạn có thật sự muốn xóa Danh Mục: {0} \nĐiều này sẽ khiến món ăn này ở tất cả bill bị xóa ! ", nameCategory), "Thông báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    if (CategoryDAO.Instance.DeleteFood(IdCategory))
+                    {
+                        MessageBox.Show("Xóa danh mục thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kiểm tra lại thông tin");
+                    }
+                    btnReadCate.PerformClick();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kiểm tra lại thông tin");
             }
         }
 
@@ -252,7 +268,7 @@ namespace QuanLiQuanAn
                     MessageBox.Show("Thêm tài khoản thất bại");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Thêm tài khoản thất bại \n Vui lòng kiểm tra lại thông tin");
                 throw ex;
@@ -297,7 +313,7 @@ namespace QuanLiQuanAn
             int type = (int)(nbudAccount.Value);
             try
             {
-                if (AccountDAO.Instance.DeleteAccountByAdmin(username,loginAccount))
+                if (AccountDAO.Instance.DeleteAccountByAdmin(username, loginAccount))
                 {
                     MessageBox.Show("Cập nhật tài khoản thành công");
                 }
@@ -313,5 +329,6 @@ namespace QuanLiQuanAn
             }
             btnReadAccount.PerformClick();
         }
+        #endregion
     }
 }

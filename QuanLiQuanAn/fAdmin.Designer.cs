@@ -112,6 +112,8 @@ namespace QuanLiQuanAn
             this.btnUpdateAccount = new System.Windows.Forms.Button();
             this.btnRemoveAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
+            this.lb = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -797,6 +799,8 @@ namespace QuanLiQuanAn
             // 
             // panel23
             // 
+            this.panel23.Controls.Add(this.label13);
+            this.panel23.Controls.Add(this.lb);
             this.panel23.Controls.Add(this.nbudAccount);
             this.panel23.Controls.Add(this.label10);
             this.panel23.Location = new System.Drawing.Point(13, 212);
@@ -813,7 +817,7 @@ namespace QuanLiQuanAn
             0,
             0});
             this.nbudAccount.Name = "nbudAccount";
-            this.nbudAccount.Size = new System.Drawing.Size(293, 27);
+            this.nbudAccount.Size = new System.Drawing.Size(101, 27);
             this.nbudAccount.TabIndex = 1;
             // 
             // label10
@@ -888,6 +892,7 @@ namespace QuanLiQuanAn
             // 
             // dtgvAccount
             // 
+            this.dtgvAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvAccount.Location = new System.Drawing.Point(3, 0);
             this.dtgvAccount.Name = "dtgvAccount";
@@ -946,6 +951,24 @@ namespace QuanLiQuanAn
             this.btnAddAccount.Text = "Thêm";
             this.btnAddAccount.UseVisualStyleBackColor = true;
             this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
+            // 
+            // lb
+            // 
+            this.lb.AutoSize = true;
+            this.lb.Location = new System.Drawing.Point(285, 11);
+            this.lb.Name = "lb";
+            this.lb.Size = new System.Drawing.Size(106, 20);
+            this.lb.TabIndex = 2;
+            this.lb.Text = "0: Là nhân viên";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(285, 34);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(87, 20);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "1: Là Admin";
             // 
             // fAdmin
             // 
@@ -1096,5 +1119,7 @@ namespace QuanLiQuanAn
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.NumericUpDown nbudAccount;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lb;
     }
 }
