@@ -429,3 +429,9 @@ end
 
 alter table bill
 add default 0 for totalPrice
+
+create proc USP_LoadTableList
+as
+begin
+  select * from TableFood
+end
