@@ -1,4 +1,5 @@
-CREATE DATABASE Quanliquancafe;
+
+create DATABASE Quanliquancafe
 GO
 USE Quanliquancafe;
 GO
@@ -50,9 +51,11 @@ CREATE TABLE billInfo (
 )
 
 -- add default 
+go 
 
 ALTER TABLE TableFood
 ADD DEFAULT (N'Trống') FOR status;
+go
 
 -- Insert dữ liệu mẫu
 -- Account 
@@ -128,7 +131,7 @@ BEGIN
 END
 GO
 
-Create PROC USP_InstertBillInfo @idbill int, @idFood int, @count int
+alter PROC USP_InstertBillInfo @idbill int, @idFood int, @count int
 AS
 BEGIN
   DECLARE @isExillBillInfo int
