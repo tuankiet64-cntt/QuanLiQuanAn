@@ -81,22 +81,24 @@ namespace QuanLiQuanAn
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtNameTable = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtIDTable = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dtgvTable = new System.Windows.Forms.DataGridView();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnReadTable = new System.Windows.Forms.Button();
+            this.btnUpdateTable = new System.Windows.Forms.Button();
+            this.btnDeleteTable = new System.Windows.Forms.Button();
+            this.btnAddTable = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel22 = new System.Windows.Forms.Panel();
             this.btnResetPass = new System.Windows.Forms.Button();
             this.panel23 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lb = new System.Windows.Forms.Label();
             this.nbudAccount = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
@@ -112,8 +114,6 @@ namespace QuanLiQuanAn
             this.btnUpdateAccount = new System.Windows.Forms.Button();
             this.btnRemoveAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
-            this.lb = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -141,7 +141,7 @@ namespace QuanLiQuanAn
             this.panel15.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTable)).BeginInit();
             this.panel20.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel22.SuspendLayout();
@@ -649,19 +649,19 @@ namespace QuanLiQuanAn
             // 
             // panel15
             // 
-            this.panel15.Controls.Add(this.textBox5);
+            this.panel15.Controls.Add(this.txtNameTable);
             this.panel15.Controls.Add(this.label5);
             this.panel15.Location = new System.Drawing.Point(13, 114);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(476, 79);
             this.panel15.TabIndex = 4;
             // 
-            // textBox5
+            // txtNameTable
             // 
-            this.textBox5.Location = new System.Drawing.Point(161, 27);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(297, 27);
-            this.textBox5.TabIndex = 3;
+            this.txtNameTable.Location = new System.Drawing.Point(161, 27);
+            this.txtNameTable.Name = "txtNameTable";
+            this.txtNameTable.Size = new System.Drawing.Size(297, 27);
+            this.txtNameTable.TabIndex = 3;
             // 
             // label5
             // 
@@ -675,20 +675,20 @@ namespace QuanLiQuanAn
             // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.textBox8);
+            this.panel18.Controls.Add(this.txtIDTable);
             this.panel18.Controls.Add(this.label6);
             this.panel18.Location = new System.Drawing.Point(13, 18);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(476, 79);
             this.panel18.TabIndex = 0;
             // 
-            // textBox8
+            // txtIDTable
             // 
-            this.textBox8.Location = new System.Drawing.Point(161, 27);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(297, 27);
-            this.textBox8.TabIndex = 3;
+            this.txtIDTable.Location = new System.Drawing.Point(161, 27);
+            this.txtIDTable.Name = "txtIDTable";
+            this.txtIDTable.ReadOnly = true;
+            this.txtIDTable.Size = new System.Drawing.Size(297, 27);
+            this.txtIDTable.TabIndex = 3;
             // 
             // label6
             // 
@@ -702,68 +702,73 @@ namespace QuanLiQuanAn
             // 
             // panel19
             // 
-            this.panel19.Controls.Add(this.dataGridView4);
+            this.panel19.Controls.Add(this.dtgvTable);
             this.panel19.Location = new System.Drawing.Point(9, 118);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(504, 473);
             this.panel19.TabIndex = 10;
             // 
-            // dataGridView4
+            // dtgvTable
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(3, 0);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowHeadersWidth = 51;
-            this.dataGridView4.RowTemplate.Height = 29;
-            this.dataGridView4.Size = new System.Drawing.Size(498, 472);
-            this.dataGridView4.TabIndex = 1;
+            this.dtgvTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvTable.Location = new System.Drawing.Point(3, 0);
+            this.dtgvTable.Name = "dtgvTable";
+            this.dtgvTable.RowHeadersWidth = 51;
+            this.dtgvTable.RowTemplate.Height = 29;
+            this.dtgvTable.Size = new System.Drawing.Size(498, 472);
+            this.dtgvTable.TabIndex = 1;
             // 
             // panel20
             // 
-            this.panel20.Controls.Add(this.button11);
-            this.panel20.Controls.Add(this.button12);
-            this.panel20.Controls.Add(this.button13);
-            this.panel20.Controls.Add(this.button14);
+            this.panel20.Controls.Add(this.btnReadTable);
+            this.panel20.Controls.Add(this.btnUpdateTable);
+            this.panel20.Controls.Add(this.btnDeleteTable);
+            this.panel20.Controls.Add(this.btnAddTable);
             this.panel20.Location = new System.Drawing.Point(9, 10);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(504, 101);
             this.panel20.TabIndex = 9;
             // 
-            // button11
+            // btnReadTable
             // 
-            this.button11.Location = new System.Drawing.Point(377, 14);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(115, 71);
-            this.button11.TabIndex = 3;
-            this.button11.Text = "Xem";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnReadTable.Location = new System.Drawing.Point(377, 14);
+            this.btnReadTable.Name = "btnReadTable";
+            this.btnReadTable.Size = new System.Drawing.Size(115, 71);
+            this.btnReadTable.TabIndex = 3;
+            this.btnReadTable.Text = "Xem";
+            this.btnReadTable.UseVisualStyleBackColor = true;
+            this.btnReadTable.Click += new System.EventHandler(this.btnReadTable_Click);
             // 
-            // button12
+            // btnUpdateTable
             // 
-            this.button12.Location = new System.Drawing.Point(256, 14);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(115, 71);
-            this.button12.TabIndex = 2;
-            this.button12.Text = "Sửa";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnUpdateTable.Location = new System.Drawing.Point(256, 14);
+            this.btnUpdateTable.Name = "btnUpdateTable";
+            this.btnUpdateTable.Size = new System.Drawing.Size(115, 71);
+            this.btnUpdateTable.TabIndex = 2;
+            this.btnUpdateTable.Text = "Sửa";
+            this.btnUpdateTable.UseVisualStyleBackColor = true;
+            this.btnUpdateTable.Click += new System.EventHandler(this.btnUpdateTable_Click);
             // 
-            // button13
+            // btnDeleteTable
             // 
-            this.button13.Location = new System.Drawing.Point(135, 14);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(115, 71);
-            this.button13.TabIndex = 1;
-            this.button13.Text = "Xóa";
-            this.button13.UseVisualStyleBackColor = true;
+            this.btnDeleteTable.Location = new System.Drawing.Point(135, 14);
+            this.btnDeleteTable.Name = "btnDeleteTable";
+            this.btnDeleteTable.Size = new System.Drawing.Size(115, 71);
+            this.btnDeleteTable.TabIndex = 1;
+            this.btnDeleteTable.Text = "Xóa";
+            this.btnDeleteTable.UseVisualStyleBackColor = true;
+            this.btnDeleteTable.Click += new System.EventHandler(this.btnDeleteTable_Click);
             // 
-            // button14
+            // btnAddTable
             // 
-            this.button14.Location = new System.Drawing.Point(14, 14);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(115, 71);
-            this.button14.TabIndex = 0;
-            this.button14.Text = "Thêm";
-            this.button14.UseVisualStyleBackColor = true;
+            this.btnAddTable.Location = new System.Drawing.Point(14, 14);
+            this.btnAddTable.Name = "btnAddTable";
+            this.btnAddTable.Size = new System.Drawing.Size(115, 71);
+            this.btnAddTable.TabIndex = 0;
+            this.btnAddTable.Text = "Thêm";
+            this.btnAddTable.UseVisualStyleBackColor = true;
+            this.btnAddTable.Click += new System.EventHandler(this.btnAddTable_Click);
             // 
             // tabPage5
             // 
@@ -807,6 +812,24 @@ namespace QuanLiQuanAn
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(476, 79);
             this.panel23.TabIndex = 5;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(285, 34);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(87, 20);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "1: Là Admin";
+            // 
+            // lb
+            // 
+            this.lb.AutoSize = true;
+            this.lb.Location = new System.Drawing.Point(285, 11);
+            this.lb.Name = "lb";
+            this.lb.Size = new System.Drawing.Size(106, 20);
+            this.lb.TabIndex = 2;
+            this.lb.Text = "0: Là nhân viên";
             // 
             // nbudAccount
             // 
@@ -952,24 +975,6 @@ namespace QuanLiQuanAn
             this.btnAddAccount.UseVisualStyleBackColor = true;
             this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
             // 
-            // lb
-            // 
-            this.lb.AutoSize = true;
-            this.lb.Location = new System.Drawing.Point(285, 11);
-            this.lb.Name = "lb";
-            this.lb.Size = new System.Drawing.Size(106, 20);
-            this.lb.TabIndex = 2;
-            this.lb.Text = "0: Là nhân viên";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(285, 34);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 20);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "1: Là Admin";
-            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1016,7 +1021,7 @@ namespace QuanLiQuanAn
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel19.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTable)).EndInit();
             this.panel20.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
@@ -1087,18 +1092,18 @@ namespace QuanLiQuanAn
         private System.Windows.Forms.Button btnInsertCate;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtNameTable;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtIDTable;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView dtgvTable;
         private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnReadTable;
+        private System.Windows.Forms.Button btnUpdateTable;
+        private System.Windows.Forms.Button btnDeleteTable;
+        private System.Windows.Forms.Button btnAddTable;
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.Button btnResetPass;
         private System.Windows.Forms.Panel panel23;

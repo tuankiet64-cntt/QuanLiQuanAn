@@ -23,6 +23,8 @@ namespace QuanLiQuanAn
             LoadCategory();
             showInfoFood();
             showInfoCate();
+            LoadTable();
+            showInfoTable();
             showInfoAccount();
             LoadBill(dtpkCheckin.Value, dtpkCheckout.Value);
         }
@@ -46,6 +48,23 @@ namespace QuanLiQuanAn
             CultureInfo culture = new CultureInfo("vi-VN");
             txtTotal.Text = totalBill.ToString("c", culture);
         }
+        void LoadListFood()
+        {
+            dtgvFood.DataSource = null;
+            dtgvFood.DataSource = FoodDAO.Instance.GetAllListFood();
+
+        }
+        private void LoadCategory()
+        {
+            cbCategory.DataSource = CategoryDAO.Instance.getListCategory();
+            cbCategory.DisplayMember = "name";
+            cbCategory.ValueMember = "id";
+            dtgvCategory.DataSource = CategoryDAO.Instance.getListCategory();
+        }
+        void LoadTable()
+        {
+            dtgvTable.DataSource = TableDAO.Intance.loadTableAdmin();
+        }
         void Resetdtpk()
         {
             DateTime today = DateTime.Now;
@@ -53,12 +72,6 @@ namespace QuanLiQuanAn
             dtpkCheckin.Value = new DateTime(today.Year, today.Month, 1);
             //Lấy cuối tháng công thêm 1 để qua tháng sau rồi trừ lại 1 ngày
             dtpkCheckout.Value = dtpkCheckin.Value.AddMonths(1).AddDays(-1);
-
-        }
-        void LoadListFood()
-        {
-            dtgvFood.DataSource = null;
-            dtgvFood.DataSource = FoodDAO.Instance.GetAllListFood();
 
         }
         void showInfoFood()
@@ -89,12 +102,12 @@ namespace QuanLiQuanAn
             txtDisplayName.DataBindings.Add("text", dtgvAccount.DataSource, "Tên hiển thị", true, DataSourceUpdateMode.Never);
             nbudAccount.DataBindings.Add("value", dtgvAccount.DataSource, "Loại tài khoản", true, DataSourceUpdateMode.Never);
         }
-        private void LoadCategory()
+        void showInfoTable()
         {
-            cbCategory.DataSource = CategoryDAO.Instance.getListCategory();
-            cbCategory.DisplayMember = "name";
-            cbCategory.ValueMember = "id";
-            dtgvCategory.DataSource = CategoryDAO.Instance.getListCategory();
+            txtIDTable.DataBindings.Clear();
+            txtNameTable.DataBindings.Clear();
+            txtIDTable.DataBindings.Add("text", dtgvTable.DataSource, "ID", true, DataSourceUpdateMode.Never);
+            txtNameTable.DataBindings.Add("text", dtgvTable.DataSource, "Tên bàn", true, DataSourceUpdateMode.Never);
         }
         #endregion
 
@@ -330,5 +343,80 @@ namespace QuanLiQuanAn
             btnReadAccount.PerformClick();
         }
         #endregion
+
+        private void btnReadTable_Click(object sender, EventArgs e)
+        {
+            LoadTable();
+            showInfoTable();
+        }
+
+        private void btnAddTable_Click(object sender, EventArgs e)
+        {
+            string name = txtNameTable.Text;
+            try
+            {
+                if (TableDAO.Intance.insertTable(name))
+                {
+                    MessageBox.Show("Tạo bàn thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Tạo bàn thất bại");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin");
+            }
+            btnReadTable.PerformClick();
+        }
+
+        private void btnUpdateTable_Click(object sender, EventArgs e)
+        {
+            string name = txtNameTable.Text;
+            int idtable = Convert.ToInt32(txtIDTable.Text);
+            try
+            {
+                if (TableDAO.Intance.UpdateTable(name, idtable))
+                {
+                    MessageBox.Show("Cập nhật bàn thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật bàn thất bại");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin");
+            }
+            btnReadTable.PerformClick();
+        }
+
+        private void btnDeleteTable_Click(object sender, EventArgs e)
+        {
+            string name = txtNameTable.Text;
+            int idtable = Convert.ToInt32(txtIDTable.Text);
+            if (MessageBox.Show(string.Format("Bạn có thật sự muốn xóa bàn : {0} \nĐiều này sẽ khiến bill của bàn này bị xóa ! ", name), "Thông báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                try
+                {
+                    if (TableDAO.Intance.DeleteTable(idtable))
+                    {
+                        MessageBox.Show("Xóa bàn thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa bàn thất bại");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Vui lòng kiểm tra lại thông tin");
+                }
+
+            }
+            btnReadTable.PerformClick();
+        }
     }
 }
