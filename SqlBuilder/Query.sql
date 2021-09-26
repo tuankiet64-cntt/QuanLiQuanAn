@@ -237,7 +237,7 @@ ALTER TABLE bill
 ADD DEFAULT 0 FOR discount
 GO
 
-CREATE PROC USP_switchtable @idTable1 int, @idTable2 int
+create PROC USP_switchtable @idTable1 int, @idTable2 int
 AS
 BEGIN
   DECLARE @idFirstBill int
@@ -251,11 +251,13 @@ BEGIN
   FROM bill
   WHERE idtable = @idTable1
   AND status = 0
+
   SELECT
     @idSecondBill = id
   FROM bill
   WHERE idtable = @idTable2
   AND status = 0
+
   IF (@idFirstBill IS NULL)
   BEGIN
     EXEC USP_InstertBill @idTable = @idTable1
@@ -277,31 +279,37 @@ BEGIN
     WHERE idtable = @idTable2
     AND status = 0
   END
+
   SELECT
     id INTO IDBIllinfoTable2
   FROM billInfo
   WHERE idbill = @idSecondBill
+
   UPDATE billInfo
   SET idbill = @idSecondBill
   WHERE idbill = @idFirstBill
+
   UPDATE billInfo
   SET idbill = @idFirstBill
-  WHERE idbill IN (SELECT
-    *
-  FROM IDBIllinfoTable2)
+  WHERE id IN (SELECT id FROM IDBIllinfoTable2)
+
   SELECT
     @isFirstBIllEmpty = COUNT(*)
   FROM billinfo
   WHERE idbill = @idFirstBill
+
   SELECT
     @isSecondBIllEmpty = COUNT(*)
   FROM billinfo
   WHERE idbill = @idSecondBill
+
   DROP TABLE IDBIllinfoTable2;
+
   IF (@isFirstBIllEmpty = 0)
     UPDATE TableFood
     SET status = N'Trống'
     WHERE id = @idTable1
+
   IF (@isSecondBIllEmpty = 0)
     UPDATE TableFood
     SET status = N'Trống'

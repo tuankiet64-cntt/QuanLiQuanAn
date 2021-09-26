@@ -61,12 +61,14 @@ namespace QuanLiQuanAn
         void loadCategory()
         {
             List<Category> ListCategory = CategoryDAO.Instance.getListCategory();
+            cbCate.DataSource = null;
             cbCate.DataSource = ListCategory;
             cbCate.DisplayMember = "name";
         }
         void LoadFoodByCategoryId( int id)
         {
             List<Food> ListFood = FoodDAO.Instance.getFoodByCateGoryId(id);
+            cbFood.DataSource = null;
             cbFood.DataSource = ListFood;
             cbFood.DisplayMember = "name";
 
